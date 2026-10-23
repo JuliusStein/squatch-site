@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salem Sasquatch Hockey</title>
+  <meta name="description" content="Schedule and tickets for the Salem Sasquatch semi-pro hockey team.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="assets/logo.png" alt="Salem Sasquatch logo" width="56" height="56">
+        <span class="brand-name">Salem <strong>Sasquatch</strong></span>
+      </a>
+      <nav class="nav">
+        <a href="#schedule">Schedule</a>
+        <a href="#schedule" data-filter-link="home">Tickets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="assets/logo.png" alt="" width="220" height="220">
+        <div class="hero-text">
+          <p class="eyebrow">2026–27 Season</p>
+          <h1>Salem Sasquatch Hockey</h1>
+          <p class="hero-sub">Home games at the Salem Icenter. Grab your seats and pack the barn.</p>
+          <div id="next-home" class="next-home" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule">
+      <div class="wrap">
+        <div class="schedule-head">
+          <h2>Schedule</h2>
+          <div class="filters" role="tablist" aria-label="Filter games">
+            <button role="tab" data-filter="all" aria-selected="true">All</button>
+            <button role="tab" data-filter="home" aria-selected="false">Home</button>
+            <button role="tab" data-filter="away" aria-selected="false">Away</button>
+          </div>
+        </div>
+        <div id="game-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Salem Sasquatch Hockey · Salem Icenter, Salem, NH</p>
+    </div>
+  </footer>
+
+  <!-- Ticket checkout -->
+  <dialog id="ticket-dialog" class="ticket-dialog" aria-labelledby="ticket-title">
+    <form id="ticket-form" novalidate>
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">Buy tickets</p>
+          <h3 id="ticket-title"></h3>
+          <p id="ticket-meta" class="ticket-meta"></p>
+        </div>
+        <button type="button" class="icon-btn" data-close aria-label="Close">×</button>
+      </div>
+
+      <div class="field">
+        <label for="f-name">Full name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+        <p class="error" data-for="name"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+          <p class="error" data-for="email"></p>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+          <p class="error" data-for="phone"></p>
+        </div>
+      </div>
+
+      <div class="field qty-field">
+        <label for="f-qty">Tickets</label>
+        <div class="qty">
+          <button type="button" class="qty-btn" data-step="-1" aria-label="Fewer tickets">−</button>
+          <input id="f-qty" name="quantity" type="number" inputmode="numeric" min="1" value="1" required>
+          <button type="button" class="qty-btn" data-step="1" aria-label="More tickets">+</button>
+        </div>
+        <p class="price-line"><span id="unit-price"></span> each · Total <strong id="total"></strong></p>
+        <p class="error" data-for="quantity"></p>
+      </div>
+
+      <fieldset class="pay-methods">
+        <legend>Pay with</legend>
+        <label class="pay-opt">
+          <input type="radio" name="method" value="stripe" checked>
+          <span>Credit card <small>via Stripe</small></span>
+        </label>
+        <label class="pay-opt">
+          <input type="radio" name="method" value="paypal">
+          <span>PayPal</span>
+        </label>
+        <label class="pay-opt">
+          <input type="radio" name="method" value="venmo">
+          <span>Venmo</span>
+        </label>
+      </fieldset>
+
+      <p id="form-status" class="form-status" role="status" hidden></p>
+
+      <button type="submit" class="btn btn-primary btn-block" id="checkout-btn">Continue to checkout</button>
+    </form>
+  </dialog>
+
+  <script src="js/schedule.js"></script>
+  <script src="js/payments.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
