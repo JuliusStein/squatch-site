@@ -16,6 +16,8 @@ from zoneinfo import ZoneInfo
 FEED_URL = "https://ical.sportngin.com/v3/calendar/ical?team_ids=11f12492-94a3-f992-bfae-92d13fd9be2b"
 TEAM = "Salem Sasquatch"
 DEFAULT_TZ = "America/New_York"
+# Fallback for deciding home games when a summary doesn't name the home team.
+HOME_RINK = "Salem Icenter"
 
 
 def fetch(url):
@@ -60,12 +62,18 @@ def parse_start(value, params):
     return datetime.strptime(value, "%Y%m%dT%H%M%S").replace(tzinfo=tz)
 
 
-def opponent_from(summary):
-    # Summaries look like "Boston Gold Kings  at Salem Sasquatch".
-    parts = [p.strip() for p in re.split(r"\s+(?:at|vs\.?|@)\s+", summary, maxsplit=1)]
-    if len(parts) == 2:
-        return parts[1] if parts[0] == TEAM else parts[0]
-    return summary.strip()
+def matchup(summary, location):
+    """Return (opponent, is_home) from a summary like "Boston Gold Kings  at Salem Sasquatch".
+
+    "A at B" means B is the home team; "A vs B" means A is.
+    """
+    m = re.match(r"\s*(.+?)\s+(at|@|vs\.?)\s+(.+?)\s*$", summary)
+    if m:
+        first, sep, second = m.groups()
+        home_team = second if sep in ("at", "@") else first
+        opponent = second if first == TEAM else first
+        return opponent, home_team == TEAM
+    return summary.strip(), location == HOME_RINK
 
 
 def to_game(ev):
@@ -73,14 +81,18 @@ def to_game(ev):
         return None
     start = parse_start(*ev["DTSTART"])
     summary = unescape(ev.get("SUMMARY", ("",))[0])
+    location = unescape(ev.get("LOCATION", ("TBA",))[0]).strip()
+    opponent, is_home = matchup(summary, location)
     return {
         "id": ev.get("UID", (start.isoformat(),))[0],
         "start": start.astimezone(timezone.utc).isoformat().replace("+00:00", "Z"),
         # Wall-clock date/time at the rink, shown as-is on the site.
         "date": start.strftime("%Y-%m-%d"),
         "time": start.strftime("%I:%M %p").lstrip("0"),
-        "location": unescape(ev.get("LOCATION", ("TBA",))[0]).strip(),
-        "opponent": opponent_from(summary),
+        "location": location,
+        "opponent": opponent,
+        # Home games are the ones with ticket sales.
+        "home": is_home,
     }
 
 

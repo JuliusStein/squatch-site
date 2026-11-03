@@ -1,7 +1,6 @@
 (async function () {
-  // Games at HOME_RINK are home games and are the only ones with ticket sales.
-  const HOME_RINK = "Salem Icenter";
   // Built from the SportsEngine iCal feed by scripts/build_schedule.py on each deploy.
+  // Games marked `home` there are the only ones with ticket sales.
   const SCHEDULE_URL = "data/schedule.json";
 
   const ICON_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
@@ -21,7 +20,7 @@
         // Calendar day at the rink, for display; `startsAt` is the real instant.
         start: new Date(y, m - 1, d),
         startsAt: new Date(g.start),
-        isHome: g.location === HOME_RINK,
+        isHome: g.home,
         // A game stays "upcoming" (and on sale) until ~3h after puck drop.
         isPast: new Date(g.start).getTime() + 3 * 3600e3 < Date.now(),
       };
