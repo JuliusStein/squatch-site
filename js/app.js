@@ -1,29 +1,36 @@
-(function () {
+(async function () {
+  // Games at HOME_RINK are home games and are the only ones with ticket sales.
+  const HOME_RINK = "Salem Icenter";
+  // Built from the SportsEngine iCal feed by scripts/build_schedule.py on each deploy.
+  const SCHEDULE_URL = "data/schedule.json";
+
   const ICON_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
   const ICON_PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
 
   const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
 
-  // Parse "7:20 PM" on a "YYYY-MM-DD" date into a local Date.
-  function gameStart(g) {
-    const [y, m, d] = g.date.split("-").map(Number);
-    const [, hh, mm, ap] = g.time.match(/(\d+):(\d+)\s*(AM|PM)/i);
-    let h = Number(hh) % 12;
-    if (ap.toUpperCase() === "PM") h += 12;
-    return new Date(y, m - 1, d, h, Number(mm));
+  const listEl = document.getElementById("game-list");
+  let games;
+  try {
+    const res = await fetch(SCHEDULE_URL, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    games = (await res.json()).games.map((g) => {
+      const [y, m, d] = g.date.split("-").map(Number);
+      return {
+        ...g,
+        // Calendar day at the rink, for display; `startsAt` is the real instant.
+        start: new Date(y, m - 1, d),
+        startsAt: new Date(g.start),
+        isHome: g.location === HOME_RINK,
+        // A game stays "upcoming" (and on sale) until ~3h after puck drop.
+        isPast: new Date(g.start).getTime() + 3 * 3600e3 < Date.now(),
+      };
+    }).sort((a, b) => a.startsAt - b.startsAt);
+  } catch (err) {
+    console.error("Could not load schedule:", err);
+    listEl.innerHTML = '<p class="empty">The schedule couldn\'t be loaded right now. Please try again shortly.</p>';
+    return;
   }
-
-  const games = SCHEDULE.map((g) => {
-    const start = gameStart(g);
-    return {
-      ...g,
-      id: g.date,
-      start,
-      isHome: g.location === HOME_RINK,
-      // A game stays "upcoming" (and on sale) until ~3h after puck drop.
-      isPast: start.getTime() + 3 * 3600e3 < Date.now(),
-    };
-  }).sort((a, b) => a.start - b.start);
 
   const fmt = {
     dow: (d) => d.toLocaleDateString("en-US", { weekday: "short" }),
@@ -35,7 +42,6 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   // ---- Schedule list ----
-  const listEl = document.getElementById("game-list");
   let filter = "all";
 
   function renderList() {
@@ -59,7 +65,7 @@
   function gameRow(g) {
     let action;
     if (g.isPast) action = '<span class="status-text">Final</span>';
-    else if (g.isHome) action = `<button class="btn btn-primary" data-buy="${g.id}">Buy tickets</button>`;
+    else if (g.isHome) action = `<button class="btn btn-primary" data-buy="${esc(g.id)}">Buy tickets</button>`;
     else action = '<span class="status-text">Away game</span>';
 
     return `
@@ -106,7 +112,7 @@
         <div class="what">vs ${esc(nextHome.opponent)}</div>
         <div>${fmt.long(nextHome.start)} · ${esc(nextHome.time)}</div>
       </div>
-      <button class="btn btn-primary" data-buy="${nextHome.id}">Get tickets</button>`;
+      <button class="btn btn-primary" data-buy="${esc(nextHome.id)}">Get tickets</button>`;
     el.hidden = false;
   }
 

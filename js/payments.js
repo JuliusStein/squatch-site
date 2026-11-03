@@ -3,7 +3,7 @@
 //
 // Every provider receives the same `order` object:
 //   {
-//     gameId:     "2026-11-21",            // ISO date of the game
+//     gameId:     "…@sportsengine.com",    // calendar event UID of the game
 //     game:       "vs Boston Gold Kings — Sat, Nov 21, 2026 · 7:20 PM",
 //     name:       "Jane Fan",
 //     email:      "jane@example.com",
