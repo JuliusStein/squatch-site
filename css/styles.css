@@ -42,6 +42,15 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 .brand img { width: 48px; height: 48px; border-radius: 50%; }
 .brand-name { font-size: 1.35rem; text-transform: uppercase; font-weight: 500; }
 .brand-name strong { font-weight: 700; color: #f2a36c; }
+.record {
+  display: flex; align-items: baseline; gap: 8px;
+  margin-left: auto; margin-right: 16px; padding: 4px 12px;
+  border: 1px solid rgb(248 241 227 / .25); border-radius: 8px;
+  font-family: Oswald, "Arial Narrow", sans-serif; white-space: nowrap;
+}
+.record[hidden] { display: none; }
+.record-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; opacity: .75; }
+.record-value { font-size: 1.25rem; font-weight: 700; color: #f2a36c; }
 .nav { display: flex; gap: 4px; }
 .nav a {
   color: var(--cream); text-decoration: none; font-weight: 600;
@@ -249,10 +258,17 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   .brand-name { font-size: 1.1rem; }
   .brand img { width: 40px; height: 40px; }
   .nav a { padding: 8px; }
+  .record { margin-right: 4px; padding: 2px 8px; }
+  .record-label { display: none; }
+  .header-inner { gap: 8px; }
 
   .game { grid-template-columns: 60px 1fr; gap: 12px; padding: 12px; }
   .game-action { grid-column: 1 / -1; text-align: left; }
   .game-action .btn { width: 100%; }
   .date-block .day { font-size: 1.6rem; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
+}
+@media (max-width: 420px) {
+  /* Make room for the record: the page itself is the schedule. */
+  .nav a:first-child { display: none; }
 }
