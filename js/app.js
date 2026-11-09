@@ -63,7 +63,13 @@
 
   function gameRow(g) {
     let action;
-    if (g.isPast) action = '<span class="status-text">Final</span>';
+    if (g.score) {
+      const s = g.score;
+      action = `<span class="score score-${s.result.toLowerCase()}" aria-label="Final: ${s.result === "W" ? "win" : s.result === "L" ? "loss" : "tie"}, ${s.salem} to ${s.opponent}">
+        <span class="score-result">${s.result}</span> ${s.salem}–${s.opponent}${s.note ? ` <small>${esc(s.note)}</small>` : ""}
+      </span>`;
+    }
+    else if (g.isPast) action = '<span class="status-text">Final</span>';
     else if (g.isHome) action = `<button class="btn btn-primary" data-buy="${esc(g.id)}">Buy tickets</button>`;
     else action = '<span class="status-text">Away game</span>';
 

@@ -123,7 +123,8 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   box-shadow: var(--shadow);
 }
 .game.is-home { border-left-color: var(--orange); }
-.game.is-past { opacity: .55; box-shadow: none; }
+.game.is-past { background: var(--cream); box-shadow: none; }
+.is-past .date-block, .is-past .game-main { opacity: .6; }
 
 .date-block {
   text-align: center; line-height: 1;
@@ -152,6 +153,18 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 
 .game-action { text-align: right; }
 .status-text { color: var(--muted); font-size: .9rem; font-weight: 500; }
+.score {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: Oswald, "Arial Narrow", sans-serif; font-size: 1.35rem; font-weight: 600;
+  color: var(--ink); white-space: nowrap;
+}
+.score-result {
+  display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 6px;
+  font-size: 1rem; color: var(--white); background: var(--muted);
+}
+.score-w .score-result { background: var(--orange); }
+.score-l .score-result { background: var(--purple); }
+.score small { font-size: .8rem; color: var(--muted); font-weight: 500; }
 
 .empty { color: var(--muted); padding: 24px 0; }
 

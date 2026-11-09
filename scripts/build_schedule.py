@@ -18,6 +18,8 @@ TEAM = "Salem Sasquatch"
 DEFAULT_TZ = "America/New_York"
 # Fallback for deciding home games when a summary doesn't name the home team.
 HOME_RINK = "Salem Icenter"
+# Hand-entered final scores, keyed by game date (YYYY-MM-DD) at the rink.
+SCORES_FILE = Path(__file__).resolve().parent.parent / "scores.json"
 
 
 def fetch(url):
@@ -96,12 +98,33 @@ def to_game(ev):
     }
 
 
+def add_scores(games):
+    if not SCORES_FILE.exists():
+        return
+    scores = json.loads(SCORES_FILE.read_text(encoding="utf-8"))
+    by_date = {g["date"]: g for g in games}
+    for date, s in scores.items():
+        game = by_date.get(date)
+        if not game:
+            print(f"warning: scores.json has {date} but there's no game that day", file=sys.stderr)
+            continue
+        us, them = int(s["salem"]), int(s["opponent"])
+        game["score"] = {
+            "salem": us,
+            "opponent": them,
+            "result": "W" if us > them else "L" if us < them else "T",
+            # Optional, e.g. "OT" or "SO".
+            "note": s.get("note", ""),
+        }
+
+
 def main():
     out = Path(sys.argv[1] if len(sys.argv) > 1 else "data/schedule.json")
     games = [g for g in map(to_game, parse_events(fetch(FEED_URL))) if g]
     games.sort(key=lambda g: g["start"])
     if not games:
         sys.exit("Feed returned no games; refusing to publish an empty schedule.")
+    add_scores(games)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
