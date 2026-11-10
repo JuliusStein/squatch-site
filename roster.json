@@ -22,7 +22,6 @@
     { "number": 37, "name": "Luke Plumley", "position": "F/D" },
     { "number": 38, "name": "Evan Brown", "position": "F" },
     { "number": 47, "name": "Justin Pitari", "position": "D" },
-    { "number": 52, "name": "Andrew Kelley", "position": "G" },
     { "number": 59, "name": "James Willett", "position": "F" },
     { "number": 66, "name": "Jared Henderson", "position": "F/D" },
     { "number": 69, "name": "Jack Doherty", "position": "F" },
@@ -33,10 +32,7 @@
     { "number": 93, "name": "Brad Perry", "position": "F" },
     { "number": 97, "name": "Scott Isbell", "position": "F/D" },
     { "number": 98, "name": "Andrew Contrada", "position": "F" },
-    { "number": 98, "name": "Dylan Gutierrez", "position": "D" },
-    { "number": null, "name": "Alan Fritch", "position": "G" },
-    { "number": null, "name": "Cam Mical", "position": "" },
-    { "number": null, "name": "Jordan O'Hearn", "position": "" }
+    { "number": 98, "name": "Dylan Gutierrez", "position": "D" }
   ],
   "staff": [
     { "name": "Jared Henderson", "title": "Coach" },

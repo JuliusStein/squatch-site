@@ -201,7 +201,11 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   text-transform: uppercase; letter-spacing: .06em; font-size: .9rem;
 }
 .roster-table td { padding: 10px 16px; border-top: 1px solid var(--cream-2); }
-.roster-table tr.group-start td { border-top: 3px solid var(--orange); }
+.roster-table tr.group-head th {
+  padding: 14px 16px 8px; background: var(--cream); color: var(--orange-deep);
+  border-top: 3px solid var(--orange); font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase;
+}
+.roster-table tr.group-head + tr td { border-top: 0; }
 .roster-table .col-num {
   width: 64px; text-align: center;
   font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--purple);

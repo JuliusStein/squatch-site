@@ -3,6 +3,7 @@
   // List order: forwards, defense, goalies, players with no position, then staff.
   // A player listed as "F/D" sorts with their first position.
   const GROUP_ORDER = { F: 0, D: 1, G: 2, "": 3, staff: 4 };
+  const GROUP_TITLES = { F: "Forwards", D: "Defense", G: "Goalies", "": "Players", staff: "Coaching Staff" };
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -40,9 +41,10 @@
     || (a.order ?? 0) - (b.order ?? 0)
     || a.name.localeCompare(b.name));
 
-  // Mark the first row of each group so the table can draw a divider.
+  // A title row starts each group.
   listEl.innerHTML = rows.map((r, i) => `
-    <tr class="${i && rows[i - 1].group !== r.group ? "group-start" : ""} ${r.group === "staff" ? "is-staff" : ""}">
+    ${!i || rows[i - 1].group !== r.group ? `<tr class="group-head"><th scope="colgroup" colspan="3">${GROUP_TITLES[r.group]}</th></tr>` : ""}
+    <tr class="${r.group === "staff" ? "is-staff" : ""}">
       <td class="col-num">${r.number != null ? esc(r.number) : ""}</td>
       <td class="col-name">${esc(r.name)}</td>
       <td class="col-pos">${esc(r.role)}</td>
