@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stats · Salem Sasquatch Hockey</title>
+  <meta name="description" content="Salem Sasquatch player and team statistics.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="Salem Sasquatch logo" width="56" height="56">
+        <span class="brand-name">Salem <strong>Sasquatch</strong></span>
+      </a>
+      <div id="record" class="record" hidden></div>
+      <nav class="nav">
+        <a href="./#schedule">Schedule</a>
+        <a href="roster.html">Roster</a>
+        <a href="standings.html">Standings</a>
+        <a href="stats.html" aria-current="page">Stats</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow" id="stats-season">Season</p>
+        <h1>Statistics</h1>
+      </div>
+    </section>
+
+    <section class="standings">
+      <div class="wrap">
+        <div id="stats-out"><p class="empty">Loading stats…</p></div>
+        <p class="standings-key">
+          <span id="stats-updated"></span>
+          Source: <a href="https://www.thecohl.com/stats/team_instance/10522691?subseason=960828&amp;tab=team_instance_player_stats&amp;tool=5816987" rel="noopener">CoHL player stats</a>, checked every Monday.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Salem Sasquatch Hockey · Salem Icenter, Salem, NH</p>
+    </div>
+  </footer>
+
+  <script src="js/record.js"></script>
+  <script src="js/stats.js"></script>
+</body>
+</html>

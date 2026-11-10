@@ -1,42 +1,38 @@
-# Rebuilds data/schedule.json from the SportsEngine iCal feed and deploys the
-# site to GitHub Pages. Runs on every push, every 3 hours, and on demand.
-# If the feed can't be fetched, the build fails and the last deploy stays live.
+# Deploys the site to GitHub Pages: on every push to main, on demand, and from
+# "Update league data" after it commits new data (a commit made by a workflow
+# doesn't trigger other workflows, so that one calls this directly).
 name: Deploy site
 
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: "17 */3 * * *"
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-
-      - name: Build schedule from iCal feed
-        run: python scripts/build_schedule.py _site/data/schedule.json
+          # Latest main, so a deploy called right after a data commit includes it.
+          ref: main
 
       - name: Assemble site
-        run: cp -r index.html roster.html roster.json .nojekyll assets css js _site/
+        run: |
+          mkdir _site
+          cp -r index.html roster.html standings.html stats.html roster.json .nojekyll assets css js data _site/
 
       - uses: actions/configure-pages@v5
 

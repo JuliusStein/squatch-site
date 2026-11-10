@@ -1,0 +1,227 @@
+{
+  "updated": "2026-11-10T19:03:31Z",
+  "games": [
+    {
+      "id": "45919855",
+      "start": "2026-10-18T00:55:00Z",
+      "date": "2026-10-17",
+      "time": "8:55 PM",
+      "location": "Salem Icenter",
+      "opponent": "Boston Gold Kings",
+      "home": true,
+      "score": {
+        "salem": 7,
+        "opponent": 6,
+        "result": "W",
+        "note": ""
+      }
+    },
+    {
+      "id": "45919860",
+      "start": "2026-10-25T01:00:00Z",
+      "date": "2026-10-24",
+      "time": "9:00 PM",
+      "location": "New England Sports Village",
+      "opponent": "Norfolk Mallards",
+      "home": false,
+      "score": {
+        "salem": 9,
+        "opponent": 3,
+        "result": "W",
+        "note": ""
+      }
+    },
+    {
+      "id": "45919861",
+      "start": "2026-10-31T21:00:00Z",
+      "date": "2026-10-31",
+      "time": "5:00 PM",
+      "location": "Northford Ice Pavilion",
+      "opponent": "Connecticut Nutmeggers",
+      "home": false,
+      "score": {
+        "salem": 8,
+        "opponent": 5,
+        "result": "W",
+        "note": ""
+      }
+    },
+    {
+      "id": "45919867",
+      "start": "2026-11-08T00:35:00Z",
+      "date": "2026-11-07",
+      "time": "7:35 PM",
+      "location": "John A Ryan Arena",
+      "opponent": "Boston Gold Kings",
+      "home": false,
+      "score": {
+        "salem": 4,
+        "opponent": 5,
+        "result": "L",
+        "note": "OT"
+      }
+    },
+    {
+      "id": "45919869",
+      "start": "2026-11-14T23:40:00Z",
+      "date": "2026-11-14",
+      "time": "6:40 PM",
+      "location": "Olympia Ice Center",
+      "opponent": "Holyoke Papermen",
+      "home": false
+    },
+    {
+      "id": "45919874",
+      "start": "2026-11-22T00:40:00Z",
+      "date": "2026-11-21",
+      "time": "7:40 PM",
+      "location": "Salem Icenter",
+      "opponent": "Boston Gold Kings",
+      "home": true
+    },
+    {
+      "id": "45919878",
+      "start": "2026-12-06T01:55:00Z",
+      "date": "2026-12-05",
+      "time": "8:55 PM",
+      "location": "Salem Icenter",
+      "opponent": "Norfolk Mallards",
+      "home": true
+    },
+    {
+      "id": "45919879",
+      "start": "2026-12-12T23:20:00Z",
+      "date": "2026-12-12",
+      "time": "6:20 PM",
+      "location": "New England Sports Village",
+      "opponent": "Norfolk Mallards",
+      "home": false
+    },
+    {
+      "id": "45919882",
+      "start": "2026-12-20T00:00:00Z",
+      "date": "2026-12-19",
+      "time": "7:00 PM",
+      "location": "McCann Ice Arena",
+      "opponent": "Hudson Valley Reapers",
+      "home": false
+    },
+    {
+      "id": "45919891",
+      "start": "2027-01-10T00:35:00Z",
+      "date": "2027-01-09",
+      "time": "7:35 PM",
+      "location": "John A Ryan Arena",
+      "opponent": "Boston Gold Kings",
+      "home": false
+    },
+    {
+      "id": "45919895",
+      "start": "2027-01-16T21:20:00Z",
+      "date": "2027-01-16",
+      "time": "4:20 PM",
+      "location": "Tsongas Center",
+      "opponent": "Boston Gold Kings",
+      "home": true
+    },
+    {
+      "id": "45919899",
+      "start": "2027-01-24T01:50:00Z",
+      "date": "2027-01-23",
+      "time": "8:50 PM",
+      "location": "Salem Icenter",
+      "opponent": "Hudson Valley Reapers",
+      "home": true
+    },
+    {
+      "id": "45919902",
+      "start": "2027-01-31T00:25:00Z",
+      "date": "2027-01-30",
+      "time": "7:25 PM",
+      "location": "Salem Icenter",
+      "opponent": "Connecticut Nutmeggers",
+      "home": true
+    },
+    {
+      "id": "45919909",
+      "start": "2027-02-06T22:30:00Z",
+      "date": "2027-02-06",
+      "time": "5:30 PM",
+      "location": "Northford Ice Pavilion",
+      "opponent": "Connecticut Nutmeggers",
+      "home": false
+    },
+    {
+      "id": "45919915",
+      "start": "2027-02-14T00:30:00Z",
+      "date": "2027-02-13",
+      "time": "7:30 PM",
+      "location": "Salem Icenter",
+      "opponent": "Norfolk Mallards",
+      "home": true
+    },
+    {
+      "id": "45985331",
+      "start": "2027-02-20T01:00:00Z",
+      "date": "2027-02-19",
+      "time": "8:00 PM",
+      "location": "Childrens Health Dallas Stars MultiSport",
+      "opponent": "Texas Scorpions",
+      "home": false
+    },
+    {
+      "id": "45985333",
+      "start": "2027-02-21T01:00:00Z",
+      "date": "2027-02-20",
+      "time": "8:00 PM",
+      "location": "Childrens Health Dallas Stars MultiSport",
+      "opponent": "Texas Scorpions",
+      "home": false
+    },
+    {
+      "id": "45919930",
+      "start": "2027-03-07T00:00:00Z",
+      "date": "2027-03-06",
+      "time": "7:00 PM",
+      "location": "McCann Ice Arena",
+      "opponent": "Hudson Valley Reapers",
+      "home": false
+    },
+    {
+      "id": "45919935",
+      "start": "2027-03-13T23:20:00Z",
+      "date": "2027-03-13",
+      "time": "6:20 PM",
+      "location": "New England Sports Village",
+      "opponent": "Norfolk Mallards",
+      "home": false
+    },
+    {
+      "id": "45919939",
+      "start": "2027-03-14T23:20:00Z",
+      "date": "2027-03-14",
+      "time": "7:20 PM",
+      "location": "Salem Icenter",
+      "opponent": "Holyoke Papermen",
+      "home": true
+    },
+    {
+      "id": "45919943",
+      "start": "2027-03-20T23:20:00Z",
+      "date": "2027-03-20",
+      "time": "7:20 PM",
+      "location": "Salem Icenter",
+      "opponent": "Connecticut Nutmeggers",
+      "home": true
+    },
+    {
+      "id": "45919947",
+      "start": "2027-03-27T23:20:00Z",
+      "date": "2027-03-27",
+      "time": "7:20 PM",
+      "location": "Salem Icenter",
+      "opponent": "Hudson Valley Reapers",
+      "home": true
+    }
+  ]
+}

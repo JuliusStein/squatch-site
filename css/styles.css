@@ -62,9 +62,11 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 
 /* Hero */
 .hero {
+  /* Team photo under a purple wash: darkest behind the text, lighter on the right so the team shows. */
   background:
-    repeating-linear-gradient(180deg, transparent 0 14px, rgb(255 255 255 / .035) 14px 22px),
-    linear-gradient(135deg, var(--purple-deep), var(--purple));
+    linear-gradient(90deg, rgb(42 25 66 / .94) 0%, rgb(42 25 66 / .82) 45%, rgb(64 39 97 / .5) 100%),
+    url("../assets/team-photo.jpg") center 35% / cover no-repeat,
+    var(--purple-deep);
   color: var(--cream);
   padding: 56px 0 64px;
 }
@@ -213,6 +215,46 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 .roster-table th.col-num { color: var(--cream); font-size: .9rem; }
 .roster-table .col-name { font-weight: 600; }
 .roster-table .col-pos { color: var(--muted); }
+
+/* Standings page */
+.standings { padding: 24px 0 64px; }
+.division-title {
+  margin: 28px 0 10px; font-size: 1.35rem; text-transform: uppercase; color: var(--purple);
+  border-bottom: 3px solid var(--orange); padding-bottom: 4px; max-width: 860px;
+}
+.standings-scroll {
+  max-width: 860px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.standings-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.standings-table th, .standings-table td { padding: 10px 10px; text-align: center; white-space: nowrap; }
+.standings-table thead th {
+  background: var(--purple); color: var(--cream);
+  font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em; font-size: .85rem;
+}
+.standings-table tbody td, .standings-table tbody th { border-top: 1px solid var(--cream-2); }
+.standings-table .col-rank { width: 36px; color: var(--muted); }
+.standings-table thead .col-rank { color: var(--cream); }
+.standings-table .col-team { text-align: left; font-weight: 600; width: 40%; }
+.standings-table tbody .col-pts { font-weight: 700; color: var(--purple); background: rgb(64 39 97 / .05); }
+.standings-table tr.is-us { background: #fbeee3; }
+.standings-table tr.is-us .col-team { color: var(--orange-deep); }
+.standings-table .pos { color: #2f7a3e; }
+.standings-table .neg { color: var(--orange-deep); }
+/* Stats page */
+.stats-table .col-team { width: auto; }
+.stats-subtitle { margin: 24px 0 8px; font-size: 1rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.stat-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; max-width: 860px; }
+.stat-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px 16px;
+}
+.stat-value { font-family: Oswald, "Arial Narrow", sans-serif; font-size: 1.9rem; font-weight: 700; color: var(--purple); line-height: 1.1; }
+.stat-label { font-weight: 600; font-size: .9rem; }
+.stat-sub { font-size: .8rem; color: var(--muted); }
+.standings-key { max-width: 860px; margin: 20px 0 0; font-size: .9rem; color: var(--muted); }
+.standings-key a { color: var(--purple); }
 .roster-table tr.is-staff .col-pos { color: var(--orange-deep); font-weight: 500; }
 
 /* Footer */
@@ -288,7 +330,13 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 
 /* Mobile */
 @media (max-width: 720px) {
-  .hero { padding: 32px 0 40px; }
+  .hero {
+    padding: 32px 0 40px;
+    background:
+      linear-gradient(rgb(42 25 66 / .84), rgb(42 25 66 / .84)),
+      url("../assets/team-photo.jpg") center 35% / cover no-repeat,
+      var(--purple-deep);
+  }
   .hero-inner { flex-direction: column; text-align: center; gap: 20px; }
   .hero-logo { width: 150px; height: 150px; }
   .hero-sub { margin-left: auto; margin-right: auto; }
@@ -307,10 +355,17 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   .field-row { grid-template-columns: 1fr; gap: 0; }
 }
 @media (max-width: 480px) {
-  /* Make room for the record and three nav links; the logo stays. */
+  /* Make room for the record and four nav links; the logo stays. */
   .brand-name { display: none; }
-  .nav a { padding: 8px 6px; font-size: .95rem; }
+  .brand img { width: 36px; height: 36px; }
+  .nav { gap: 0; }
+  .nav a { padding: 8px 5px; font-size: .85rem; }
+  .record { padding: 2px 6px; }
+  .record-value { font-size: 1.05rem; }
   .filters button { padding: 8px 12px; }
   .roster-table th, .roster-table td { padding: 10px 8px; }
   .roster-table .col-num { width: 44px; }
+  .standings-table .col-x { display: none; }
+  .standings-table th, .standings-table td { padding: 10px 6px; }
+  .standings-table .col-team { white-space: normal; }
 }

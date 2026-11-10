@@ -1,4 +1,2 @@
 .claude/
-# Generated from the iCal feed at deploy time: python scripts/build_schedule.py
-data/
 __pycache__/

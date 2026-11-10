@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Standings · Salem Sasquatch Hockey</title>
+  <meta name="description" content="Colonial Hockey League Northeast standings.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="Salem Sasquatch logo" width="56" height="56">
+        <span class="brand-name">Salem <strong>Sasquatch</strong></span>
+      </a>
+      <div id="record" class="record" hidden></div>
+      <nav class="nav">
+        <a href="./#schedule">Schedule</a>
+        <a href="roster.html">Roster</a>
+        <a href="standings.html" aria-current="page">Standings</a>
+        <a href="stats.html">Stats</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow" id="standings-season">Colonial Hockey League</p>
+        <h1>Northeast Standings</h1>
+      </div>
+    </section>
+
+    <section class="standings">
+      <div class="wrap">
+        <div id="standings-out"><p class="empty">Loading standings…</p></div>
+        <p class="standings-key">
+          <b>OTL</b> overtime losses · <b>SOL</b> shootout losses · <b>PTS</b> 2 for a win, 1 for an OTL or SOL.
+          <span id="standings-updated"></span>
+          Source: the <a href="https://www.thecohl.com/standings/show/9440520?subseason=960828" rel="noopener">CoHL standings</a>, checked every Monday.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Salem Sasquatch Hockey · Salem Icenter, Salem, NH</p>
+    </div>
+  </footer>
+
+  <script src="js/record.js"></script>
+  <script src="js/standings.js"></script>
+</body>
+</html>

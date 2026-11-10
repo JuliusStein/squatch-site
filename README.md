@@ -1,20 +1,33 @@
 # Salem Sasquatch site
 
-Live at https://salemsasquatch.com. The schedule comes from the team's
-SportsEngine calendar and refreshes every 3 hours.
+Live at https://salemsasquatch.com.
 
-## Adding a final score
+## Where the data comes from
 
-Edit [`scores.json`](scores.json) on GitHub (pencil icon) and add a line for
-the game, keyed by its date:
+The schedule, final scores, standings and stats all come from the Salem
+Sasquatch pages on [thecohl.com](https://www.thecohl.com/page/show/9440520-salem-sasquatch).
+`scripts/update_league_data.py` reads them and writes:
 
-```json
-"2026-11-14": { "salem": 3, "opponent": 2 },
-```
+- `data/schedule.json`: every game, with final scores (and OT/SO) once played
+- `data/standings.json`: East and West division standings
+- `data/stats.json`: skater, goalie and team stats
 
-- `salem` is our goals, `opponent` is theirs; W/L is worked out from those.
-- Optional: `"note": "OT"` or `"note": "SO"`.
-- Every line except the last needs a trailing comma.
+The **Update league data** GitHub Action runs every Monday at 9:00 AM EST
+(10:00 AM during daylight saving time). If anything changed, it commits the new
+files and redeploys the site. To update right away, open the repo's **Actions**
+tab, pick **Update league data** and click **Run workflow**.
 
-Commit the change and the site redeploys in a minute or two. If the date
-doesn't match a game, the deploy log shows a warning.
+If a page can't be read, its file is left as it was and the run fails, so
+GitHub emails you. Nothing on the site is replaced with incomplete data.
+
+To fix a wrong score or stat, fix it on thecohl.com; the next update picks it up.
+
+## New season
+
+Update `SUBSEASON`, `SEASON`, `SEASON_START_YEAR` and the team page numbers at
+the top of `scripts/update_league_data.py` to match the new season's links on
+thecohl.com.
+
+## Roster
+
+The roster is edited by hand in [`roster.json`](roster.json).

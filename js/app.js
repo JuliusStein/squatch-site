@@ -1,6 +1,6 @@
 (async function () {
-  // Built from the SportsEngine iCal feed by scripts/build_schedule.py on each deploy.
-  // Games marked `home` there are the only ones with ticket sales.
+  // Read from thecohl.com by scripts/update_league_data.py (every Monday).
+  // Home games are the only ones with ticket sales.
   const SCHEDULE_URL = "data/schedule.json";
 
   const ICON_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
@@ -69,6 +69,7 @@
         <span class="score-result">${s.result}</span> ${s.salem}–${s.opponent}${s.note ? ` <small>${esc(s.note)}</small>` : ""}
       </span>`;
     }
+    else if (g.status) action = `<span class="status-text">${esc(g.status)}</span>`;
     else if (g.isPast) action = '<span class="status-text">Final</span>';
     else if (g.isHome) action = `<button class="btn btn-primary" data-buy="${esc(g.id)}">Buy tickets</button>`;
     else action = '<span class="status-text">Away game</span>';
@@ -86,7 +87,7 @@
             <span class="tag ${g.isHome ? "tag-home" : "tag-away"}">${g.isHome ? "Home" : "Away"}</span>
           </p>
           <p class="details">
-            <span>${ICON_CLOCK}${esc(g.time)}</span>
+            ${g.time ? `<span>${ICON_CLOCK}${esc(g.time)}</span>` : ""}
             <span>${ICON_PIN}${esc(g.location)}</span>
           </p>
         </div>

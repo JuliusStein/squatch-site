@@ -1,0 +1,100 @@
+{
+  "updated": "2026-11-10T19:03:31Z",
+  "season": "2026–27",
+  "divisions": [
+    {
+      "name": "East",
+      "teams": [
+        {
+          "name": "Salem Sasquatch",
+          "gp": 4,
+          "w": 3,
+          "l": 0,
+          "t": 0,
+          "otl": 1,
+          "sol": 0,
+          "pts": 7,
+          "gf": 28,
+          "ga": 19,
+          "diff": 9,
+          "divRecord": "2-0-0-1-0"
+        },
+        {
+          "name": "Boston Gold Kings",
+          "gp": 6,
+          "w": 3,
+          "l": 3,
+          "t": 0,
+          "otl": 0,
+          "sol": 0,
+          "pts": 6,
+          "gf": 37,
+          "ga": 30,
+          "diff": 7,
+          "divRecord": "1-1-0-0-0"
+        },
+        {
+          "name": "Norfolk Mallards",
+          "gp": 3,
+          "w": 1,
+          "l": 2,
+          "t": 0,
+          "otl": 0,
+          "sol": 0,
+          "pts": 2,
+          "gf": 7,
+          "ga": 19,
+          "diff": -12,
+          "divRecord": "0-1-0-0-0"
+        }
+      ]
+    },
+    {
+      "name": "West",
+      "teams": [
+        {
+          "name": "Connecticut Nutmeggers",
+          "gp": 4,
+          "w": 2,
+          "l": 1,
+          "t": 0,
+          "otl": 1,
+          "sol": 0,
+          "pts": 5,
+          "gf": 22,
+          "ga": 15,
+          "diff": 7,
+          "divRecord": "0-0-0-1-0"
+        },
+        {
+          "name": "Hudson Valley Reapers",
+          "gp": 2,
+          "w": 2,
+          "l": 0,
+          "t": 0,
+          "otl": 0,
+          "sol": 0,
+          "pts": 4,
+          "gf": 12,
+          "ga": 7,
+          "diff": 5,
+          "divRecord": "2-0-0-0-0"
+        },
+        {
+          "name": "Holyoke Papermen",
+          "gp": 3,
+          "w": 0,
+          "l": 3,
+          "t": 0,
+          "otl": 0,
+          "sol": 0,
+          "pts": 0,
+          "gf": 7,
+          "ga": 23,
+          "diff": -16,
+          "divRecord": "0-1-0-0-0"
+        }
+      ]
+    }
+  ]
+}

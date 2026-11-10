@@ -1,0 +1,64 @@
+# Every Monday at 9:00 AM Eastern Standard Time (14:00 UTC), read the schedule,
+# final scores, standings and stats from thecohl.com. If anything changed, commit
+# the new data/ files and redeploy the site. Run it any time from the Actions tab.
+# (GitHub's cron is in UTC, so during daylight saving time this runs at 10:00 AM EDT.
+#  Scheduled runs can also start a few minutes late when GitHub is busy.)
+name: Update league data
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # If a page can't be read, its file is left alone and this step fails (so the
+      # run shows red), but anything that did update is still committed below.
+      - name: Read thecohl.com
+        id: read
+        continue-on-error: true
+        run: python scripts/update_league_data.py data
+
+      - name: Commit changes
+        id: commit
+        run: |
+          if git diff --quiet -- data; then
+            echo "No new information."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data
+            git commit -m "Update league data from thecohl.com"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fail if a page couldn't be read
+        if: steps.read.outcome == 'failure'
+        run: exit 1
+
+  deploy:
+    needs: update
+    if: ${{ always() && needs.update.outputs.changed == 'true' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
