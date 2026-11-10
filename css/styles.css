@@ -58,7 +58,7 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 }
 .nav a:hover { background: rgb(255 255 255 / .1); }
 .nav a[aria-current="page"] { color: #f2a36c; box-shadow: inset 0 -3px 0 var(--orange); border-radius: 0; }
-#schedule, #tickets { scroll-margin-top: 88px; }
+#schedule { scroll-margin-top: 88px; }
 
 /* Hero */
 .hero {

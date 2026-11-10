@@ -97,9 +97,6 @@
   document.querySelectorAll("[data-filter]").forEach((btn) => {
     btn.addEventListener("click", () => setFilter(btn.dataset.filter));
   });
-  document.querySelectorAll("[data-filter-link]").forEach((a) => {
-    a.addEventListener("click", () => setFilter(a.dataset.filterLink));
-  });
 
   function setFilter(f) {
     filter = f;
@@ -234,9 +231,5 @@
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
-  // The Tickets link from other pages lands on "#tickets": show home games.
-  if (location.hash === "#tickets") {
-    setFilter("home");
-    document.getElementById("tickets").scrollIntoView();
-  } else renderList();
+  renderList();
 })();
