@@ -62,15 +62,25 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 
 /* Hero */
 .hero {
-  /* Team photo under a purple wash: darkest behind the text, lighter on the right so the team shows. */
+  /* Team photo with a light purple tint that drops off quickly from the left edge,
+     so the whole team shows. Tall enough to fit most of the photo (it's about 2.3:1). */
   background:
-    linear-gradient(90deg, rgb(42 25 66 / .94) 0%, rgb(42 25 66 / .82) 45%, rgb(64 39 97 / .5) 100%),
-    url("../assets/team-photo.jpg") center 35% / cover no-repeat,
+    linear-gradient(180deg, transparent 50%, rgb(42 25 66 / .55) 72%, rgb(42 25 66 / .9) 100%),
+    linear-gradient(90deg, rgb(42 25 66 / .5) 0%, rgb(42 25 66 / .1) 25%, transparent 45%),
+    url("../assets/team-photo.jpg") center 30% / cover no-repeat,
     var(--purple-deep);
   color: var(--cream);
-  padding: 56px 0 64px;
+  padding: 32px 0 28px;
+  min-height: min(44vw, 720px);
+  /* Logo and text sit along the bottom, over the ice, below the team's faces. */
+  display: flex; align-items: flex-end;
 }
-.hero-inner { display: flex; align-items: center; gap: 40px; }
+.hero > .wrap { width: 100%; }
+.hero-inner { display: flex; align-items: flex-end; gap: 28px; }
+.hero .hero-logo { width: 150px; height: 150px; }
+.hero .hero-sub { margin: 6px 0 14px; }
+/* Keep the text readable now that the photo shows through. */
+.hero-text { text-shadow: 0 1px 2px rgb(0 0 0 / .7), 0 2px 16px rgb(0 0 0 / .55); }
 .hero-logo {
   width: 220px; height: 220px; flex: none; border-radius: 50%;
   box-shadow: 0 0 0 6px rgb(248 241 227 / .15), 0 20px 40px rgb(0 0 0 / .3);
@@ -83,8 +93,10 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 .hero-sub { margin: 12px 0 24px; max-width: 46ch; opacity: .9; }
 .next-home {
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  background: rgb(248 241 227 / .08);
-  border: 1px solid rgb(248 241 227 / .2);
+  background: rgb(42 25 66 / .6);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border: 1px solid rgb(248 241 227 / .25);
+  text-shadow: none;
   border-radius: var(--radius);
   padding: 14px 16px;
   max-width: 520px;
@@ -328,17 +340,25 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 }
 .form-status.ok { background: #e3f1e5; color: #1e6b33; }
 
-/* Mobile */
-@media (max-width: 720px) {
+/* Narrower screens: the whole photo across the top (it's 1179x515, so its height is
+   43.7vw), fading into purple over the ice, with the logo and text starting near its
+   bottom edge and running into the purple below. */
+@media (max-width: 1199px) {
   .hero {
-    padding: 32px 0 40px;
+    display: block; min-height: 0;
+    padding: 35.5vw 0 36px;
     background:
-      linear-gradient(rgb(42 25 66 / .84), rgb(42 25 66 / .84)),
-      url("../assets/team-photo.jpg") center 35% / cover no-repeat,
+      linear-gradient(180deg, transparent 29vw, var(--purple-deep) 43.7vw),
+      url("../assets/team-photo.jpg") center top / 100% auto no-repeat,
       var(--purple-deep);
   }
-  .hero-inner { flex-direction: column; text-align: center; gap: 20px; }
-  .hero-logo { width: 150px; height: 150px; }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .hero { padding-top: 38vw; }
+  .hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+  .hero .hero-logo { width: 120px; height: 120px; }
   .hero-sub { margin-left: auto; margin-right: auto; }
   .next-home { margin: 0 auto; text-align: left; }
   .brand-name { font-size: 1.1rem; }
