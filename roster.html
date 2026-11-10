@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roster · Salem Sasquatch Hockey</title>
+  <meta name="description" content="Players and staff of the Salem Sasquatch semi-pro hockey team.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="Salem Sasquatch logo" width="56" height="56">
+        <span class="brand-name">Salem <strong>Sasquatch</strong></span>
+      </a>
+      <div id="record" class="record" hidden></div>
+      <nav class="nav">
+        <a href="./#schedule">Schedule</a>
+        <a href="roster.html" aria-current="page">Roster</a>
+        <a href="./#tickets">Tickets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow" id="roster-season">Season</p>
+        <h1>Roster</h1>
+      </div>
+    </section>
+
+    <section class="roster">
+      <div class="wrap">
+        <div class="schedule-head">
+          <h2>Players</h2>
+          <div class="filters" role="tablist" aria-label="Filter players">
+            <button role="tab" data-filter="all" aria-selected="true">All</button>
+            <button role="tab" data-filter="F" aria-selected="false">Forwards</button>
+            <button role="tab" data-filter="D" aria-selected="false">Defense</button>
+            <button role="tab" data-filter="G" aria-selected="false">Goalies</button>
+          </div>
+        </div>
+        <ul id="player-list" class="player-grid"></ul>
+
+        <h2 class="staff-title">Staff</h2>
+        <ul id="staff-list" class="player-grid"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Salem Sasquatch Hockey · Salem Icenter, Salem, NH</p>
+    </div>
+  </footer>
+
+  <script src="js/record.js"></script>
+  <script src="js/roster.js"></script>
+</body>
+</html>

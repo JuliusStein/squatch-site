@@ -107,16 +107,7 @@
     renderList();
   }
 
-  // ---- Season record in the header ----
-  const tally = { W: 0, L: 0, T: 0 };
-  for (const g of games) if (g.score) tally[g.score.result]++;
-  if (tally.W + tally.L + tally.T) {
-    const parts = [tally.W, tally.L].concat(tally.T ? [tally.T] : []);
-    const el = document.getElementById("record");
-    el.innerHTML = `<span class="record-label">Record</span><span class="record-value">${parts.join("–")}</span>`;
-    el.title = `Season record: ${tally.W} wins, ${tally.L} losses${tally.T ? `, ${tally.T} ties` : ""}`;
-    el.hidden = false;
-  }
+  showRecord(games);
 
   // ---- Next home game callout ----
   const nextHome = games.find((g) => g.isHome && !g.isPast);
@@ -243,5 +234,9 @@
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
-  renderList();
+  // The Tickets link from other pages lands on "#tickets": show home games.
+  if (location.hash === "#tickets") {
+    setFilter("home");
+    document.getElementById("tickets").scrollIntoView();
+  } else renderList();
 })();
