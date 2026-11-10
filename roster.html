@@ -37,19 +37,12 @@
 
     <section class="roster">
       <div class="wrap">
-        <div class="schedule-head">
-          <h2>Players</h2>
-          <div class="filters" role="tablist" aria-label="Filter players">
-            <button role="tab" data-filter="all" aria-selected="true">All</button>
-            <button role="tab" data-filter="F" aria-selected="false">Forwards</button>
-            <button role="tab" data-filter="D" aria-selected="false">Defense</button>
-            <button role="tab" data-filter="G" aria-selected="false">Goalies</button>
-          </div>
-        </div>
-        <ul id="player-list" class="player-grid"></ul>
-
-        <h2 class="staff-title">Staff</h2>
-        <ul id="staff-list" class="player-grid"></ul>
+        <table class="roster-table">
+          <thead>
+            <tr><th scope="col" class="col-num">#</th><th scope="col">Name</th><th scope="col">Position</th></tr>
+          </thead>
+          <tbody id="roster-list"></tbody>
+        </table>
       </div>
     </section>
   </main>

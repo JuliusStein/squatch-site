@@ -1,11 +1,14 @@
 (async function () {
   const POSITIONS = { F: "Forward", D: "Defense", G: "Goalie" };
+  // List order: forwards, defense, goalies, players with no position, then staff.
+  // A player listed as "F/D" sorts with their first position.
+  const GROUP_ORDER = { F: 0, D: 1, G: 2, "": 3, staff: 4 };
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   document.getElementById("year").textContent = new Date().getFullYear();
   loadRecord();
 
-  const listEl = document.getElementById("player-list");
+  const listEl = document.getElementById("roster-list");
   let roster;
   try {
     const res = await fetch("roster.json", { cache: "no-cache" });
@@ -13,50 +16,35 @@
     roster = await res.json();
   } catch (err) {
     console.error("Could not load roster:", err);
-    listEl.outerHTML = '<p class="empty">The roster couldn\'t be loaded right now. Please try again shortly.</p>';
+    listEl.closest("table").outerHTML = '<p class="empty">The roster couldn\'t be loaded right now. Please try again shortly.</p>';
     return;
   }
 
   document.getElementById("roster-season").textContent = `${roster.season} Season`;
 
-  // Sort by number; players without one go last, by name.
-  const players = roster.players.map((p) => ({ ...p, positions: p.position ? p.position.split("/") : [] }))
-    .sort((a, b) => (a.number ?? 1e9) - (b.number ?? 1e9) || a.name.localeCompare(b.name));
+  const rows = [
+    ...roster.players.map((p) => {
+      const positions = p.position ? p.position.split("/") : [];
+      return {
+        number: p.number,
+        name: p.name,
+        role: positions.map((x) => POSITIONS[x]).join(" / ") || "—",
+        group: positions[0] || "",
+      };
+    }),
+    // Staff keep the order they're listed in roster.json.
+    ...roster.staff.map((s, i) => ({ number: null, name: s.name, role: s.title, group: "staff", order: i })),
+  ].sort((a, b) =>
+    GROUP_ORDER[a.group] - GROUP_ORDER[b.group]
+    || (a.number ?? 1e9) - (b.number ?? 1e9)
+    || (a.order ?? 0) - (b.order ?? 0)
+    || a.name.localeCompare(b.name));
 
-  function card(numberHtml, name, sub) {
-    return `
-      <li class="player">
-        <div class="jersey" aria-hidden="true">${numberHtml}</div>
-        <div>
-          <p class="player-name">${esc(name)}</p>
-          <p class="player-pos">${esc(sub)}</p>
-        </div>
-      </li>`;
-  }
-
-  let filter = "all";
-  function render() {
-    const shown = players.filter((p) => filter === "all" || p.positions.includes(filter));
-    listEl.innerHTML = shown.map((p) => card(
-      p.number != null ? esc(p.number) : '<span class="jersey-none">–</span>',
-      p.name,
-      p.positions.map((x) => POSITIONS[x]).join(" / ") || "Player",
-    )).join("");
-  }
-
-  document.querySelectorAll("[data-filter]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filter = btn.dataset.filter;
-      document.querySelectorAll("[data-filter]").forEach((b) => b.setAttribute("aria-selected", String(b === btn)));
-      render();
-    });
-  });
-
-  document.getElementById("staff-list").innerHTML = roster.staff.map((s) => card(
-    esc(s.name.split(" ").map((w) => w[0]).join("")),
-    s.name,
-    s.title,
-  )).join("");
-
-  render();
+  // Mark the first row of each group so the table can draw a divider.
+  listEl.innerHTML = rows.map((r, i) => `
+    <tr class="${i && rows[i - 1].group !== r.group ? "group-start" : ""} ${r.group === "staff" ? "is-staff" : ""}">
+      <td class="col-num">${r.number != null ? esc(r.number) : ""}</td>
+      <td class="col-name">${esc(r.name)}</td>
+      <td class="col-pos">${esc(r.role)}</td>
+    </tr>`).join("");
 })();
