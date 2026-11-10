@@ -90,6 +90,13 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   color: #f2a36c; font-weight: 600; letter-spacing: .12em;
 }
 .hero h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.05; text-transform: uppercase; }
+/* Thick black outline on the season line and title. The stroke is centered on the
+   letter edges, so paint-order draws it behind the fill: only the outer half shows. */
+.hero .eyebrow, .hero h1 {
+  -webkit-text-stroke: 4px #000;
+  paint-order: stroke fill;
+}
+.hero h1 { -webkit-text-stroke-width: 7px; }
 .hero-sub { margin: 12px 0 24px; max-width: 46ch; opacity: .9; }
 .next-home {
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
@@ -377,11 +384,13 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 @media (max-width: 480px) {
   /* Make room for the record and four nav links; the logo stays. */
   .brand-name { display: none; }
-  .brand img { width: 36px; height: 36px; }
+  .brand { flex: none; }
+  .brand img { width: 32px; height: 32px; }
+  .header-inner { gap: 6px; }
   .nav { gap: 0; }
-  .nav a { padding: 8px 5px; font-size: .85rem; }
-  .record { padding: 2px 6px; }
-  .record-value { font-size: 1.05rem; }
+  .nav a { padding: 8px 3px; font-size: .78rem; }
+  .record { padding: 2px 5px; margin-right: 0; }
+  .record-value { font-size: .95rem; }
   .filters button { padding: 8px 12px; }
   .roster-table th, .roster-table td { padding: 10px 8px; }
   .roster-table .col-num { width: 44px; }
@@ -420,3 +429,11 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
 .admin-games tr.is-past-row { color: var(--muted); }
 .admin-games small { font-weight: 400; color: var(--muted); }
 .admin-updated { color: var(--muted); font-size: .9rem; padding-left: 18px; margin: 16px 0 0; }
+
+/* Instagram icon at the end of the nav */
+.nav a.nav-icon { display: grid; place-items: center; padding: 8px; }
+.nav-icon svg { width: 22px; height: 22px; }
+@media (max-width: 480px) {
+  .nav a.nav-icon { padding: 8px 2px 8px 4px; }
+  .nav-icon svg { width: 19px; height: 19px; }
+}
