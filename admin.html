@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · Salem Sasquatch Hockey</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="Salem Sasquatch logo" width="56" height="56">
+        <span class="brand-name">Salem <strong>Sasquatch</strong></span>
+      </a>
+      <div id="record" class="record" hidden></div>
+      <nav class="nav">
+        <a href="./#schedule">Schedule</a>
+        <a href="roster.html">Roster</a>
+        <a href="standings.html">Standings</a>
+        <a href="stats.html">Stats</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap admin-hero">
+        <div>
+          <p class="eyebrow">Team staff</p>
+          <h1>Admin</h1>
+        </div>
+        <button type="button" class="btn admin-signout" id="admin-signout" hidden>Sign out</button>
+      </div>
+    </section>
+
+    <section class="standings">
+      <div class="wrap">
+        <div id="admin-locked" class="admin-locked">
+          <p>Sign in to see the admin tools.</p>
+          <button type="button" class="btn btn-primary" id="admin-signin">Sign in</button>
+        </div>
+
+        <div id="admin-tools" hidden>
+          <h2 class="division-title">Ticket buyers</h2>
+          <p class="admin-note">
+            Online checkout isn't connected yet. Once it is, each order is paid and stored in
+            Stripe or PayPal with the buyer's name, email, phone, ticket count and game. Open
+            the dashboards below to see who bought tickets. Each game's <b>Game ID</b> is attached
+            to its orders, so you can search for it there.
+          </p>
+          <div class="admin-links">
+            <a class="admin-link" href="https://dashboard.stripe.com/payments" target="_blank" rel="noopener">
+              <b>Stripe payments</b><span>Card orders</span>
+            </a>
+            <a class="admin-link" href="https://www.paypal.com/myaccount/activities/" target="_blank" rel="noopener">
+              <b>PayPal activity</b><span>PayPal and Venmo orders</span>
+            </a>
+          </div>
+          <h3 class="stats-subtitle">Home games</h3>
+          <div class="standings-scroll">
+            <table class="standings-table admin-games">
+              <thead><tr><th scope="col" class="col-team">Game</th><th scope="col">Date</th><th scope="col" class="col-x">Rink</th><th scope="col">Game ID</th></tr></thead>
+              <tbody id="admin-games"></tbody>
+            </table>
+          </div>
+
+          <h2 class="division-title">Roster</h2>
+          <p class="admin-note">
+            Opens the roster file in GitHub's editor (sign in with the GitHub account that owns the site).
+            Edit, click <b>Commit changes</b>, and the site updates in a minute or two.
+          </p>
+          <div class="admin-links">
+            <a class="admin-link" href="https://github.com/JuliusStein/squatch-site/edit/main/roster.json" target="_blank" rel="noopener">
+              <b>Edit roster</b><span>roster.json on GitHub</span>
+            </a>
+            <a class="admin-link" href="roster.html">
+              <b>View roster page</b><span>As fans see it</span>
+            </a>
+          </div>
+
+          <h2 class="division-title">League data</h2>
+          <p class="admin-note">
+            Schedule, scores, standings and stats update from thecohl.com every Monday at 9 AM.
+            To update now, open the update page, click <b>Run workflow</b>, then <b>Run workflow</b> again.
+            It takes about a minute, plus another minute to redeploy if anything changed.
+          </p>
+          <div class="admin-links">
+            <a class="admin-link" href="https://github.com/JuliusStein/squatch-site/actions/workflows/update-data.yml" target="_blank" rel="noopener">
+              <b>Update now</b><span>Run the update on GitHub</span>
+            </a>
+            <a class="admin-link" href="https://www.thecohl.com/page/show/9440520-salem-sasquatch" target="_blank" rel="noopener">
+              <b>Salem on thecohl.com</b><span>Where the data comes from</span>
+            </a>
+          </div>
+          <ul class="admin-updated" id="admin-updated"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Salem Sasquatch Hockey · Salem Icenter, Salem, NH</p>
+    </div>
+  </footer>
+
+  <script src="js/record.js"></script>
+  <script src="js/admin-login.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

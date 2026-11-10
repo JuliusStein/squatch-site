@@ -389,3 +389,34 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   .standings-table th, .standings-table td { padding: 10px 6px; }
   .standings-table .col-team { white-space: normal; }
 }
+
+/* Admin: corner button on every page, and the admin page */
+.admin-corner {
+  position: fixed; right: 12px; bottom: 12px; z-index: 20;
+  width: 34px; height: 34px; display: grid; place-items: center; padding: 0;
+  border: 1px solid var(--line); border-radius: 50%; cursor: pointer;
+  background: var(--white); color: var(--muted); opacity: .55;
+  box-shadow: var(--shadow); transition: opacity .15s;
+}
+.admin-corner:hover, .admin-corner:focus-visible { opacity: 1; color: var(--purple); }
+.admin-corner svg { width: 16px; height: 16px; }
+.admin-dialog { width: min(400px, calc(100% - 32px)); }
+.admin-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.admin-signout { background: transparent; color: var(--cream); border: 1px solid rgb(248 241 227 / .4); }
+.admin-signout:hover { background: rgb(255 255 255 / .1); }
+.admin-locked { padding: 24px 0; color: var(--muted); }
+.admin-note { max-width: 720px; color: var(--muted); margin: 0 0 14px; }
+.admin-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; max-width: 860px; }
+.admin-link {
+  display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; text-decoration: none;
+  background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--orange);
+  border-radius: var(--radius); box-shadow: var(--shadow); color: var(--ink);
+}
+.admin-link:hover { border-color: var(--purple); border-left-color: var(--orange); }
+.admin-link b { font-family: Oswald, "Arial Narrow", sans-serif; font-size: 1.15rem; color: var(--purple); text-transform: uppercase; letter-spacing: .03em; }
+.admin-link span { font-size: .85rem; color: var(--muted); }
+.admin-games .col-team { width: auto; }
+.admin-games code { font-size: .85rem; background: var(--cream-2); padding: 2px 6px; border-radius: 4px; }
+.admin-games tr.is-past-row { color: var(--muted); }
+.admin-games small { font-weight: 400; color: var(--muted); }
+.admin-updated { color: var(--muted); font-size: .9rem; padding-left: 18px; margin: 16px 0 0; }
