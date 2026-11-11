@@ -1,0 +1,781 @@
+{
+  "updated": "2026-11-11T00:13:17Z",
+  "id": "45919860",
+  "periods": [
+    "1",
+    "2",
+    "3"
+  ],
+  "note": "",
+  "teams": [
+    {
+      "name": "Salem Sasquatch",
+      "us": true,
+      "goals": [
+        2,
+        2,
+        5,
+        9
+      ],
+      "shots": [
+        13,
+        26,
+        20,
+        59
+      ],
+      "powerPlay": "0 for 2 (0.0%)",
+      "penaltySummary": "6 minutes on 3 infractions",
+      "skaters": [
+        {
+          "number": null,
+          "name": "Richard Colarusso",
+          "g": 0,
+          "a": 3,
+          "pts": 3,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 6,
+          "name": "Mark Blaney",
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "sog": 2,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 7,
+          "name": "Jackson Legro",
+          "g": 1,
+          "a": 3,
+          "pts": 4,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 11,
+          "name": "Robert Murphy",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 14,
+          "name": "Brady Plante",
+          "g": 1,
+          "a": 3,
+          "pts": 4,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 26,
+          "name": "Tom Missert",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 27,
+          "name": "Reed Chuda",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley",
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 59,
+          "name": "James Willett",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 69,
+          "name": "Jack Doherty",
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 71,
+          "name": "Tucker Twardosky",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 74,
+          "name": "Patrick Wrenn",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 81,
+          "name": "Robert Ghergurovich",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 93,
+          "name": "Brad Perry",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 98,
+          "name": "Dylan Gutierrez",
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 31,
+          "name": "Hunter Tetreault",
+          "min": "60:00",
+          "sog": 36,
+          "ga": 3,
+          "sv": 33,
+          "svPct": 0.917
+        },
+        {
+          "number": 52,
+          "name": "Andrew Kelley",
+          "min": "0:00",
+          "sog": 0,
+          "ga": 0,
+          "sv": 0,
+          "svPct": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Norfolk Mallards",
+      "us": false,
+      "goals": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "shots": [
+        14,
+        14,
+        12,
+        40
+      ],
+      "powerPlay": "1 for 3 (33.33%)",
+      "penaltySummary": "4 minutes on 2 infractions",
+      "skaters": [
+        {
+          "number": null,
+          "name": "zachary lewis",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Andrew Todd",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Ryan O’Connor",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Jack Moran",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Caden Rakes",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "David Duffy",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "joey briffett",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Brody Shaw",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Thomas Deguire",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Hayden Kearney",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Daniel Belov",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Dylan Rakes",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Gavin Alves",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Cameron Lindsay",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Liam Potts",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Chris Baker",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Kyle Mastroianni",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Aaron Bell",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "Jack Halloran",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": null,
+          "name": "David Piela",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": null,
+          "name": "Andrew Todd",
+          "min": "13:36",
+          "sog": 7,
+          "ga": 1,
+          "sv": 6,
+          "svPct": 0.857
+        },
+        {
+          "number": null,
+          "name": "Chris Baker",
+          "min": "46:24",
+          "sog": 52,
+          "ga": 8,
+          "sv": 44,
+          "svPct": 0.846
+        }
+      ]
+    }
+  ],
+  "scoring": [
+    {
+      "period": "1st Period",
+      "clock": "1:45",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 69,
+        "name": "Jack Doherty"
+      },
+      "assists": [
+        {
+          "number": 37,
+          "name": "Luke Plumley"
+        },
+        {
+          "number": 98,
+          "name": "Dylan Gutierrez"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "4:52",
+      "team": "Norfolk Mallards",
+      "scorer": {
+        "number": null,
+        "name": "zachary lewis"
+      },
+      "assists": [
+        {
+          "number": null,
+          "name": "Gavin Alves"
+        },
+        {
+          "number": null,
+          "name": "Cameron Lindsay"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        1,
+        1
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "13:12",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 71,
+        "name": "Tucker Twardosky"
+      },
+      "assists": [
+        {
+          "number": 14,
+          "name": "Brady Plante"
+        },
+        {
+          "number": 7,
+          "name": "Jackson Legro"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        2,
+        1
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "4:14",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 6,
+        "name": "Mark Blaney"
+      },
+      "assists": [
+        {
+          "number": 14,
+          "name": "Brady Plante"
+        },
+        {
+          "number": null,
+          "name": "Richard Colarusso"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        3,
+        1
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "16:25",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 6,
+        "name": "Mark Blaney"
+      },
+      "assists": [
+        {
+          "number": 98,
+          "name": "Dylan Gutierrez"
+        },
+        {
+          "number": 7,
+          "name": "Jackson Legro"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        4,
+        1
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "1:33",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 69,
+        "name": "Jack Doherty"
+      },
+      "assists": [
+        {
+          "number": 13,
+          "name": "John Hamilton"
+        },
+        {
+          "number": 14,
+          "name": "Brady Plante"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        1
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "2:27",
+      "team": "Norfolk Mallards",
+      "scorer": {
+        "number": null,
+        "name": "Daniel Belov"
+      },
+      "assists": [],
+      "strength": "",
+      "score": [
+        5,
+        2
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "2:59",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 14,
+        "name": "Brady Plante"
+      },
+      "assists": [
+        {
+          "number": null,
+          "name": "Richard Colarusso"
+        },
+        {
+          "number": 7,
+          "name": "Jackson Legro"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        6,
+        2
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "5:09",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 81,
+        "name": "Robert Ghergurovich"
+      },
+      "assists": [
+        {
+          "number": 74,
+          "name": "Patrick Wrenn"
+        },
+        {
+          "number": 59,
+          "name": "James Willett"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        7,
+        2
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "6:23",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 7,
+        "name": "Jackson Legro"
+      },
+      "assists": [
+        {
+          "number": 69,
+          "name": "Jack Doherty"
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        8,
+        2
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "12:08",
+      "team": "Norfolk Mallards",
+      "scorer": {
+        "number": null,
+        "name": "Daniel Belov"
+      },
+      "assists": [],
+      "strength": "even strength",
+      "score": [
+        8,
+        3
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "12:58",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 13,
+        "name": "John Hamilton"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": null,
+          "name": "Richard Colarusso"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        9,
+        3
+      ]
+    }
+  ],
+  "penalties": [
+    {
+      "period": "1st Period",
+      "clock": "9:18",
+      "team": "Norfolk Mallards",
+      "player": {
+        "number": null,
+        "name": "Kyle Mastroianni"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "11:50",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 6,
+        "name": "Mark Blaney"
+      },
+      "infraction": "Roughing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "19:18",
+      "team": "Norfolk Mallards",
+      "player": {
+        "number": null,
+        "name": "Cameron Lindsay"
+      },
+      "infraction": "Roughing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "7:08",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 11,
+        "name": "Robert Murphy"
+      },
+      "infraction": "High-Sticking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "2:17",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 37,
+        "name": "Luke Plumley"
+      },
+      "infraction": "Holding - Minor",
+      "minutes": 2
+    }
+  ]
+}

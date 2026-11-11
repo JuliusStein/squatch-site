@@ -65,9 +65,12 @@
     let action;
     if (g.score) {
       const s = g.score;
-      action = `<span class="score score-${s.result.toLowerCase()}" aria-label="Final: ${s.result === "W" ? "win" : s.result === "L" ? "loss" : "tie"}, ${s.salem} to ${s.opponent}">
-        <span class="score-result">${s.result}</span> ${s.salem}–${s.opponent}${s.note ? ` <small>${esc(s.note)}</small>` : ""}
-      </span>`;
+      action = `<a class="game-link" href="game.html?id=${encodeURIComponent(g.id)}" aria-label="Box score: ${s.result === "W" ? "win" : s.result === "L" ? "loss" : "tie"}, ${s.salem} to ${s.opponent}${g.isHome ? " vs " : " at "}${esc(g.opponent)}">
+        <span class="score score-${s.result.toLowerCase()}">
+          <span class="score-result">${s.result}</span> ${s.salem}–${s.opponent}${s.note ? ` <small>${esc(s.note)}</small>` : ""}
+        </span>
+        <span class="box-link">Box score ›</span>
+      </a>`;
     }
     else if (g.status) action = `<span class="status-text">${esc(g.status)}</span>`;
     else if (g.isPast) action = '<span class="status-text">Final</span>';
@@ -75,7 +78,7 @@
     else action = '<span class="status-text">Away game</span>';
 
     return `
-      <li class="game ${g.isHome ? "is-home" : "is-away"} ${g.isPast ? "is-past" : ""}">
+      <li class="game ${g.isHome ? "is-home" : "is-away"} ${g.isPast ? "is-past" : ""}${g.score ? " has-box" : ""}">
         <div class="date-block" aria-hidden="true">
           <div class="dow">${fmt.dow(g.start)}</div>
           <div class="day">${g.start.getDate()}</div>

@@ -1,0 +1,968 @@
+{
+  "updated": "2026-11-11T00:13:17Z",
+  "id": "45919861",
+  "periods": [
+    "1",
+    "2",
+    "3"
+  ],
+  "note": "",
+  "teams": [
+    {
+      "name": "Salem Sasquatch",
+      "us": true,
+      "goals": [
+        1,
+        2,
+        5,
+        8
+      ],
+      "shots": [
+        19,
+        19,
+        12,
+        50
+      ],
+      "powerPlay": "0 for 7 (0.0%)",
+      "penaltySummary": "47 minutes on 14 infractions",
+      "skaters": [
+        {
+          "number": 2,
+          "name": "Julius Stein",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 11,
+          "plusMinus": 0
+        },
+        {
+          "number": 6,
+          "name": "Mark Blaney",
+          "g": 1,
+          "a": 4,
+          "pts": 5,
+          "sog": 1,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 8,
+          "name": "Nick Newman",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 10,
+          "plusMinus": 0
+        },
+        {
+          "number": 9,
+          "name": "Jacob Howell",
+          "g": 4,
+          "a": 3,
+          "pts": 7,
+          "sog": 4,
+          "pim": 4,
+          "plusMinus": 0
+        },
+        {
+          "number": 11,
+          "name": "Robert Murphy",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 18,
+          "name": "Brendan Young",
+          "g": 0,
+          "a": 3,
+          "pts": 3,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 26,
+          "name": "Tom Missert",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 27,
+          "name": "Reed Chuda",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 6,
+          "plusMinus": 0
+        },
+        {
+          "number": 69,
+          "name": "Jack Doherty",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 81,
+          "name": "Robert Ghergurovich",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 93,
+          "name": "Brad Perry",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 97,
+          "name": "Scott Isbell",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 12,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 31,
+          "name": "Keegan McLaughlin",
+          "min": "60:00",
+          "sog": 56,
+          "ga": 5,
+          "sv": 51,
+          "svPct": 0.911
+        },
+        {
+          "number": 35,
+          "name": "Ryan Creenan",
+          "min": "0:00",
+          "sog": 0,
+          "ga": 0,
+          "sv": 0,
+          "svPct": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Connecticut Nutmeggers",
+      "us": false,
+      "goals": [
+        3,
+        1,
+        1,
+        5
+      ],
+      "shots": [
+        20,
+        18,
+        18,
+        56
+      ],
+      "powerPlay": "1 for 10 (10.0%)",
+      "penaltySummary": "16 minutes on 8 infractions",
+      "skaters": [
+        {
+          "number": 2,
+          "name": "Shayne Bingham",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 4,
+          "name": "Nick Blaszka",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 5,
+          "name": "Aidan Matter",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 8,
+          "name": "Chase Reynolds",
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 9,
+          "name": "Christopher Hamilton",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 10,
+          "name": "Cameron Gaylor *A",
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 11,
+          "name": "Max Breon",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 12,
+          "name": "Zachary Riccitelli",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "Quinten Olshan",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 16,
+          "name": "Jason Diamond",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 17,
+          "name": "Robert Nolan",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 4,
+          "plusMinus": 0
+        },
+        {
+          "number": 19,
+          "name": "Connor Movalli",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 26,
+          "name": "Sam Mitchell",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 29,
+          "name": "Todd Goehring",
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 69,
+          "name": "Nathaniel Towse",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 72,
+          "name": "Alex Tsymbalyuk",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 93,
+          "name": "Brody Trew *C",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 96,
+          "name": "Gavin Rock",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 97,
+          "name": "Gavin Frack *A",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 1,
+          "name": "Ian McCarthy",
+          "min": "18:28",
+          "sog": 9,
+          "ga": 3,
+          "sv": 6,
+          "svPct": 0.667
+        },
+        {
+          "number": 32,
+          "name": "Parker Butler",
+          "min": "41:32",
+          "sog": 40,
+          "ga": 4,
+          "sv": 36,
+          "svPct": 0.9
+        }
+      ]
+    }
+  ],
+  "scoring": [
+    {
+      "period": "1st Period",
+      "clock": "0:30",
+      "team": "Connecticut Nutmeggers",
+      "scorer": {
+        "number": 29,
+        "name": "Todd Goehring"
+      },
+      "assists": [
+        {
+          "number": 10,
+          "name": "Cameron Gaylor *A"
+        },
+        {
+          "number": 8,
+          "name": "Chase Reynolds"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "1:04",
+      "team": "Connecticut Nutmeggers",
+      "scorer": {
+        "number": 29,
+        "name": "Todd Goehring"
+      },
+      "assists": [
+        {
+          "number": 10,
+          "name": "Cameron Gaylor *A"
+        },
+        {
+          "number": 8,
+          "name": "Chase Reynolds"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        0,
+        2
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "8:51",
+      "team": "Connecticut Nutmeggers",
+      "scorer": {
+        "number": 16,
+        "name": "Jason Diamond"
+      },
+      "assists": [
+        {
+          "number": 9,
+          "name": "Christopher Hamilton"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        0,
+        3
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "19:26",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "assists": [
+        {
+          "number": 18,
+          "name": "Brendan Young"
+        }
+      ],
+      "strength": "short handed",
+      "score": [
+        1,
+        3
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "2:40",
+      "team": "Connecticut Nutmeggers",
+      "scorer": {
+        "number": 93,
+        "name": "Brody Trew *C"
+      },
+      "assists": [
+        {
+          "number": 97,
+          "name": "Gavin Frack *A"
+        }
+      ],
+      "strength": "short handed",
+      "score": [
+        1,
+        4
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "7:45",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 69,
+        "name": "Jack Doherty"
+      },
+      "assists": [
+        {
+          "number": 9,
+          "name": "Jacob Howell"
+        },
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        }
+      ],
+      "strength": "short handed",
+      "score": [
+        2,
+        4
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "13:19",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        3,
+        4
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "1:32",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 26,
+        "name": "Tom Missert"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 9,
+          "name": "Jacob Howell"
+        }
+      ],
+      "strength": "short handed",
+      "score": [
+        4,
+        4
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "2:28",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 81,
+        "name": "Robert Ghergurovich"
+      },
+      "assists": [
+        {
+          "number": 18,
+          "name": "Brendan Young"
+        },
+        {
+          "number": 8,
+          "name": "Nick Newman"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        4
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "7:52",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "assists": [
+        {
+          "number": 69,
+          "name": "Jack Doherty"
+        },
+        {
+          "number": 81,
+          "name": "Robert Ghergurovich"
+        }
+      ],
+      "strength": "short handed",
+      "score": [
+        6,
+        4
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "15:46",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 6,
+        "name": "Mark Blaney"
+      },
+      "assists": [
+        {
+          "number": 9,
+          "name": "Jacob Howell"
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        7,
+        4
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "18:36",
+      "team": "Connecticut Nutmeggers",
+      "scorer": {
+        "number": 10,
+        "name": "Cameron Gaylor *A"
+      },
+      "assists": [
+        {
+          "number": 93,
+          "name": "Brody Trew *C"
+        },
+        {
+          "number": 11,
+          "name": "Max Breon"
+        }
+      ],
+      "strength": "power play",
+      "score": [
+        7,
+        5
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "19:09",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 18,
+          "name": "Brendan Young"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        8,
+        5
+      ]
+    }
+  ],
+  "penalties": [
+    {
+      "period": "1st Period",
+      "clock": "4:45",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 12,
+        "name": "Zachary Riccitelli"
+      },
+      "infraction": "High-Sticking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "6:51",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 37,
+        "name": "Luke Plumley"
+      },
+      "infraction": "Interference - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "8:30",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 17,
+        "name": "Robert Nolan"
+      },
+      "infraction": "Other - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "8:30",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "15:44",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 96,
+        "name": "Gavin Rock"
+      },
+      "infraction": "Holding - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "17:45",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 2,
+        "name": "Julius Stein"
+      },
+      "infraction": "Slashing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "2:28",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 17,
+        "name": "Robert Nolan"
+      },
+      "infraction": "Holding - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "6:07",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 2,
+        "name": "Julius Stein"
+      },
+      "infraction": "Fighting - Major",
+      "minutes": 5
+    },
+    {
+      "period": "2nd Period",
+      "clock": "6:07",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 9,
+        "name": "Christopher Hamilton"
+      },
+      "infraction": "Unsportsmanlike Conduct - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "10:50",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 6,
+        "name": "Mark Blaney"
+      },
+      "infraction": "Slashing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "18:34",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 13,
+        "name": "John Hamilton"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "19:13",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 72,
+        "name": "Alex Tsymbalyuk"
+      },
+      "infraction": "Boarding - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "19:49",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 37,
+        "name": "Luke Plumley"
+      },
+      "infraction": "Unsportsmanlike Conduct - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "2:40",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "17:50",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 19,
+        "name": "Connor Movalli"
+      },
+      "infraction": "Elbowing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "3:48",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 97,
+        "name": "Scott Isbell"
+      },
+      "infraction": "Roughing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "3:48",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 97,
+        "name": "Scott Isbell"
+      },
+      "infraction": "Misconduct",
+      "minutes": 10
+    },
+    {
+      "period": "3rd Period",
+      "clock": "3:48",
+      "team": "Connecticut Nutmeggers",
+      "player": {
+        "number": 26,
+        "name": "Sam Mitchell"
+      },
+      "infraction": "Roughing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "6:40",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 37,
+        "name": "Luke Plumley"
+      },
+      "infraction": "Slashing - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "11:20",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 2,
+        "name": "Julius Stein"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "17:55",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 2,
+        "name": "Julius Stein"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "20:00",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 8,
+        "name": "Nick Newman"
+      },
+      "infraction": "Game Misconduct",
+      "minutes": 10
+    }
+  ]
+}

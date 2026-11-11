@@ -32,7 +32,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r index.html roster.html standings.html stats.html admin.html roster.json .nojekyll assets css js data _site/
+          cp -r index.html roster.html standings.html stats.html game.html admin.html roster.json .nojekyll assets css js data _site/
 
       - uses: actions/configure-pages@v5
 

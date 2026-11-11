@@ -1,0 +1,813 @@
+{
+  "updated": "2026-11-11T00:13:17Z",
+  "id": "45919855",
+  "periods": [
+    "1",
+    "2",
+    "3"
+  ],
+  "note": "",
+  "teams": [
+    {
+      "name": "Boston Gold Kings",
+      "us": false,
+      "goals": [
+        1,
+        4,
+        1,
+        6
+      ],
+      "shots": [
+        10,
+        13,
+        7,
+        30
+      ],
+      "powerPlay": "0 for 2 (0.0%)",
+      "penaltySummary": "4 minutes on 2 infractions",
+      "skaters": [
+        {
+          "number": 4,
+          "name": "Kevin Gannon",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 5,
+          "name": "Brian Cebula",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 6,
+          "name": "Will Forte",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 7,
+          "name": "Brian Bilafer",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 8,
+          "name": "Shawn Savela",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 9,
+          "name": "Russ Childers",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 11,
+          "name": "Drew Carney",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 12,
+          "name": "Spencer Smith",
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "Ryan Drizen",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 18,
+          "name": "Brian DeLisio",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 19,
+          "name": "Matt Baldino",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 20,
+          "name": "Nick McNally",
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 21,
+          "name": "Chase Ruberti",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 25,
+          "name": "Tony DiCostanzo",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 63,
+          "name": "JT Freedman",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 70,
+          "name": "Christian Baldino",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 71,
+          "name": "Mike DeLisio",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 74,
+          "name": "Peter Carriuolo",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 81,
+          "name": "Joey O’Leary",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 83,
+          "name": "Paul Tower",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 1,
+          "name": "Mike Cowell",
+          "min": "60:00",
+          "sog": 32,
+          "ga": 7,
+          "sv": 25,
+          "svPct": 0.781
+        },
+        {
+          "number": 92,
+          "name": "Kyle Mahan",
+          "min": "0:00",
+          "sog": 0,
+          "ga": 0,
+          "sv": 0,
+          "svPct": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Salem Sasquatch",
+      "us": true,
+      "goals": [
+        2,
+        2,
+        3,
+        7
+      ],
+      "shots": [
+        12,
+        11,
+        9,
+        32
+      ],
+      "powerPlay": "1 for 2 (50.0%)",
+      "penaltySummary": "6 minutes on 3 infractions",
+      "skaters": [
+        {
+          "number": 2,
+          "name": "Julius Stein",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 6,
+          "name": "Mark Blaney",
+          "g": 0,
+          "a": 5,
+          "pts": 5,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 9,
+          "name": "Jacob Howell",
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 11,
+          "name": "Robert Murphy",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 14,
+          "name": "Brady Plante",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 18,
+          "name": "Brendan Young",
+          "g": 2,
+          "a": 2,
+          "pts": 4,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 19,
+          "name": "Isaac Rogers",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 27,
+          "name": "Reed Chuda",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley",
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 47,
+          "name": "Justin Pitari",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 69,
+          "name": "Jack Doherty",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 71,
+          "name": "Tucker Twardosky",
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 74,
+          "name": "Patrick Wrenn",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 81,
+          "name": "Robert Ghergurovich",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 88,
+          "name": "Dylan Vrees",
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 97,
+          "name": "Scott Isbell",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 31,
+          "name": "Hunter Tetreault",
+          "min": "24:24",
+          "sog": 9,
+          "ga": 1,
+          "sv": 8,
+          "svPct": 0.889
+        },
+        {
+          "number": 35,
+          "name": "David Weare",
+          "min": "0:00",
+          "sog": 0,
+          "ga": 0,
+          "sv": 0,
+          "svPct": 0.0
+        },
+        {
+          "number": 35,
+          "name": "Alan Fritch",
+          "min": "35:36",
+          "sog": 21,
+          "ga": 5,
+          "sv": 16,
+          "svPct": 0.762
+        }
+      ]
+    }
+  ],
+  "scoring": [
+    {
+      "period": "1st Period",
+      "clock": "4:33",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 71,
+        "name": "Tucker Twardosky"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "7:44",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 88,
+        "name": "Dylan Vrees"
+      },
+      "assists": [
+        {
+          "number": 69,
+          "name": "Jack Doherty"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        0,
+        2
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "19:09",
+      "team": "Boston Gold Kings",
+      "scorer": {
+        "number": 20,
+        "name": "Nick McNally"
+      },
+      "assists": [
+        {
+          "number": 83,
+          "name": "Paul Tower"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        1,
+        2
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "0:53",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 71,
+        "name": "Tucker Twardosky"
+      },
+      "assists": [
+        {
+          "number": 18,
+          "name": "Brendan Young"
+        },
+        {
+          "number": 9,
+          "name": "Jacob Howell"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        1,
+        3
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "10:19",
+      "team": "Boston Gold Kings",
+      "scorer": {
+        "number": 12,
+        "name": "Spencer Smith"
+      },
+      "assists": [],
+      "strength": "even strength",
+      "score": [
+        2,
+        3
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "13:29",
+      "team": "Boston Gold Kings",
+      "scorer": {
+        "number": 20,
+        "name": "Nick McNally"
+      },
+      "assists": [
+        {
+          "number": 71,
+          "name": "Mike DeLisio"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        3,
+        3
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "14:24",
+      "team": "Boston Gold Kings",
+      "scorer": {
+        "number": 6,
+        "name": "Will Forte"
+      },
+      "assists": [
+        {
+          "number": 21,
+          "name": "Chase Ruberti"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        4,
+        3
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "15:12",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 18,
+        "name": "Brendan Young"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 9,
+          "name": "Jacob Howell"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        4,
+        4
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "15:35",
+      "team": "Boston Gold Kings",
+      "scorer": {
+        "number": 19,
+        "name": "Matt Baldino"
+      },
+      "assists": [
+        {
+          "number": 9,
+          "name": "Russ Childers"
+        },
+        {
+          "number": 81,
+          "name": "Joey O’Leary"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        4
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "5:07",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 18,
+        "name": "Brendan Young"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        }
+      ],
+      "strength": "power play",
+      "score": [
+        5,
+        5
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "13:42",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 9,
+        "name": "Jacob Howell"
+      },
+      "assists": [
+        {
+          "number": 18,
+          "name": "Brendan Young"
+        },
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        6
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "16:16",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 69,
+        "name": "Jack Doherty"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        7
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "19:52",
+      "team": "Boston Gold Kings",
+      "scorer": {
+        "number": 12,
+        "name": "Spencer Smith"
+      },
+      "assists": [
+        {
+          "number": 18,
+          "name": "Brian DeLisio"
+        },
+        {
+          "number": 19,
+          "name": "Matt Baldino"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        6,
+        7
+      ]
+    }
+  ],
+  "penalties": [
+    {
+      "period": "2nd Period",
+      "clock": "10:19",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 13,
+        "name": "John Hamilton"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "11:28",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 2,
+        "name": "Julius Stein"
+      },
+      "infraction": "Cross-Checking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "4:15",
+      "team": "Boston Gold Kings",
+      "player": {
+        "number": 63,
+        "name": "JT Freedman"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "8:18",
+      "team": "Boston Gold Kings",
+      "player": {
+        "number": 83,
+        "name": "Paul Tower"
+      },
+      "infraction": "Tripping - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "19:16",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 11,
+        "name": "Robert Murphy"
+      },
+      "infraction": "Roughing - Minor",
+      "minutes": 2
+    }
+  ]
+}

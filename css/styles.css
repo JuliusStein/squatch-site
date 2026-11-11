@@ -456,3 +456,83 @@ h1, h2, h3, .brand-name, .eyebrow, .date-block, .btn, .filters button {
   .nav a { padding: 8px 3px; font-size: .8rem; }
   .nav a.nav-icon { padding: 8px 2px; }
 }
+
+/* Sortable stats tables */
+.sort-hint { margin: -6px 0 10px; font-size: .85rem; color: var(--muted); }
+.stats-table .sort-btn {
+  all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;
+  font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit;
+}
+.stats-table .sort-btn::after { content: "↕"; font-size: .75em; opacity: .4; }
+.stats-table th[aria-sort="descending"] .sort-btn::after { content: "▼"; opacity: 1; color: var(--orange); }
+.stats-table th[aria-sort="ascending"] .sort-btn::after { content: "▲"; opacity: 1; color: var(--orange); }
+.stats-table .sort-btn:hover { text-decoration: underline; text-underline-offset: 3px; }
+.stats-table .sort-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; border-radius: 2px; }
+.stats-table tbody .is-sorted { font-weight: 700; color: var(--purple); background: rgb(64 39 97 / .05); }
+
+/* Box score page (game.html) */
+.back-link { display: inline-block; margin-bottom: 10px; color: #f2a36c; font-weight: 600; text-decoration: none; font-size: .95rem; }
+.back-link:hover { text-decoration: underline; }
+.game-where { margin: 6px 0 0; color: rgb(248 241 227 / .8); }
+.scoreboard {
+  max-width: 860px; margin: 8px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+}
+.sb-team { background: var(--white); padding: 18px 20px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; }
+.sb-side { grid-column: 1 / -1; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.sb-name { font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600; font-size: 1.3rem; text-transform: uppercase; line-height: 1.1; color: var(--ink); }
+.sb-score { font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 700; font-size: 3rem; line-height: 1; color: var(--muted); grid-row: span 2; }
+.sb-shots { font-size: .85rem; color: var(--muted); }
+.sb-team.is-winner .sb-score { color: var(--ink); }
+.sb-team.is-us .sb-name { color: var(--orange-deep); }
+.sb-team.is-us.is-winner .sb-score { color: var(--orange); }
+.sb-final {
+  grid-column: 1 / -1; background: var(--cream); padding: 8px 20px; display: flex; align-items: center; gap: 10px;
+  font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--purple);
+}
+.sb-final .score-result { width: 26px; height: 26px; font-size: .9rem; }
+.result-w .score-result { background: var(--orange); }
+.result-l .score-result { background: var(--purple); }
+.line-table + .line-table, .line-table + .standings-scroll { margin-top: 10px; }
+.line-table .col-team { width: 40%; }
+.goalie-table { margin-top: 0; }
+.standings-scroll + .standings-scroll { margin-top: 10px; }
+
+.play-period { margin: 18px 0 8px; font-size: .95rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.plays { list-style: none; margin: 0; padding: 0; max-width: 860px; display: grid; gap: 6px; }
+.play {
+  display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 12px;
+  background: var(--white); border: 1px solid var(--line); border-left: 5px solid var(--purple);
+  border-radius: 10px; padding: 10px 14px;
+}
+.play.is-us { border-left-color: var(--orange); }
+.play-clock { font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--purple); font-variant-numeric: tabular-nums; }
+.play-main { min-width: 0; display: grid; gap: 1px; }
+.play-team { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.play.is-us .play-team { color: var(--orange-deep); }
+.play-who { font-weight: 600; }
+.play-num { color: var(--muted); font-weight: 500; }
+.play-assists { font-size: .88rem; color: var(--muted); }
+.play-assists .play-num { font-weight: 400; }
+.play-tag {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 99px; vertical-align: 1px;
+  background: var(--purple-soft); color: var(--purple); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
+}
+.play-score, .play-pim { font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.play-pim { font-size: .95rem; color: var(--muted); }
+@media (max-width: 560px) {
+  .scoreboard { grid-template-columns: 1fr; }
+  .sb-team { padding: 14px 16px; }
+  .sb-score { font-size: 2.4rem; }
+  .play { grid-template-columns: 44px 1fr auto; gap: 10px; padding: 9px 12px; }
+}
+
+/* Schedule: finished games open their box score */
+.game.has-box { position: relative; transition: border-color .15s, box-shadow .15s; }
+.game.has-box:hover { box-shadow: var(--shadow); background: var(--white); }
+.game.has-box:hover .score { color: var(--purple); }
+.game-link { display: inline-grid; justify-items: end; gap: 2px; color: inherit; text-decoration: none; }
+.game-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.game-link:focus-visible { outline: none; }
+.game.has-box:focus-within { outline: 2px solid var(--orange); outline-offset: 2px; }
+.box-link { font-size: .8rem; font-weight: 600; color: var(--orange-deep); text-transform: uppercase; letter-spacing: .06em; }

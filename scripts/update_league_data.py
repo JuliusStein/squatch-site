@@ -3,6 +3,7 @@
   data/schedule.json   every game, with final scores (and OT/SO) for finished ones
   data/standings.json  Northeast East and West division standings
   data/stats.json      player stats (skaters, goalies) and team stats
+  data/games/<id>.json box score for each finished game (the id is the league's game id)
 
 thecohl.com is the source of truth. The "Update league data" GitHub Action runs this
 every Monday and commits whatever changed, which redeploys the site.
@@ -216,6 +217,125 @@ def build_stats():
             "team": {"us": side(TEAM), "opponents": side("Opponent")}}
 
 
+# ---------------------------------------------------------------- box scores
+
+def _player(fragment):
+    """'#71 <a ...>Tucker Twardosky</a>' -> {"number": 71, "name": "Tucker Twardosky"}"""
+    m = re.search(r"<a[^>]*>(.*?)</a>", fragment, re.S)
+    if not m:
+        return None
+    n = re.findall(r"#\s*(\d+)", clean(fragment[:m.start()]))
+    return {"number": int(n[-1]) if n else None, "name": clean(m.group(1))}
+
+
+def _summary_rows(block):
+    """(period label, {class: [raw html]}) for each play in a scoring or penalty summary."""
+    period = ""
+    for kind, inner in re.findall(r'<li class="(interval_row|scoring_info[^"]*)">\s*<ul>(.*?)</ul>', block, re.S):
+        if kind == "interval_row":
+            first = re.search(r"<li>(.*?)</li>", inner, re.S)
+            period = clean(first.group(1)) if first else ""
+            continue
+        cells = {}
+        for cls, val in re.findall(r'<li class="([a-z_]+)">(.*?)</li>', inner, re.S):
+            cells.setdefault(cls, []).append(val)
+        yield period, cells
+
+
+def _goal(period, cells):
+    raw = cells.get("play_details", [""])[0]
+    anchors = list(re.finditer(r"<a[^>]*>.*?</a>", raw, re.S))
+    scorer = _player(raw[:anchors[0].end()]) if anchors else None
+    assists = [_player(raw[anchors[i - 1].end():a.end()]) for i, a in enumerate(anchors) if i]
+    after = clean(raw[anchors[0].end():]) if anchors else clean(raw)
+    strength = re.match(r"\(([^)]*)\)", after)
+    goal = {
+        "period": period,
+        "clock": clean(cells.get("game_clock", [""])[0]),
+        "team": clean(cells.get("team_name", [""])[0]),
+        "scorer": scorer,
+        "assists": [a for a in assists if a],
+        "strength": strength.group(1) if strength else "",
+        "score": [num(clean(v)) for v in cells.get("team_score", [])],
+    }
+    if not scorer:
+        goal["text"] = clean(raw)
+    return goal
+
+
+def _penalty(period, cells):
+    raw = cells.get("play_details", [""])[0]
+    a = re.search(r"<a[^>]*>.*?</a>", raw, re.S)
+    what = clean(raw[a.end():]) if a else clean(raw)
+    m = re.match(r"(.*?)\s*\((\d+):\d{2}\)\s*$", what)
+    return {
+        "period": period,
+        "clock": clean(cells.get("game_clock", [""])[0]),
+        "team": clean(cells.get("team_name", [""])[0]),
+        "player": _player(raw[:a.end()]) if a else None,
+        "infraction": m.group(1) if m else what,
+        "minutes": int(m.group(2)) if m else None,
+    }
+
+
+PLAYER_KEYS = {"#": "number", "Name": "name", "G": "g", "A": "a", "PTS": "pts", "SOG": "sog", "PIM": "pim",
+               "+ / -": "plusMinus", "MIN": "min", "GA": "ga", "SV": "sv", "SV %": "svPct"}
+
+
+def build_game(gid):
+    page = fetch(f"/game/show/{gid}?subseason={SUBSEASON}")
+    body = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", page, flags=re.S | re.I)
+
+    # Line score tables (they have no id): goals, shots, power plays and penalties by team.
+    line = {rows[0]["cells"][0].upper(): rows for k, rows in tables(body).items() if isinstance(k, int) and rows}
+    goals = line.get("SCORING")
+    if not goals or len(goals) != 3:
+        raise ValueError(f"game {gid}: no line score")
+    periods = goals[0]["cells"][1:-1]
+    teams = [{"name": r["cells"][0], "us": r["cells"][0] == TEAM, "goals": [num(v) for v in r["cells"][1:]]}
+             for r in goals[1:]]
+    for team, r in zip(teams, line.get("SHOTS", [])[1:]):
+        team["shots"] = [num(v) for v in r["cells"][1:]]
+    for key, field in (("POWER PLAYS", "powerPlay"), ("PENALTIES", "penaltySummary")):
+        for team, r in zip(teams, line.get(key, [])[1:]):
+            team[field] = r["cells"][1] if len(r["cells"]) > 1 else ""
+
+    # Player tables, in page order, each under a "<Team> Skaters" or "<Team> Goalies" heading.
+    for m in re.finditer(r"<h3[^>]*>((?:(?!</?h3).)*?)</h3>\s*<table[^>]*>(.*?)</table>", body, re.S | re.I):
+        heading = clean(m.group(1))
+        kind = "skaters" if heading.endswith("Skaters") else "goalies" if heading.endswith("Goalies") else None
+        team = next((tm for tm in teams if heading.startswith(tm["name"])), None)
+        if not kind or not team:
+            continue
+        rows = [[clean(c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S | re.I)]
+                for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", m.group(2), re.S | re.I)]
+        head = rows[0]
+        team[kind] = [{PLAYER_KEYS.get(h, h): (r[i] if h in ("Name", "MIN") else num(r[i]) if r[i] else None)
+                       for i, h in enumerate(head)}
+                      for r in rows[1:] if len(r) == len(head) and r[1] != "Totals"]
+
+    # Scoring and penalty summaries.
+    summaries = {}
+    for m in re.finditer(r"<h3[^>]*>\s*(Scoring Summary|Penalty Summary|Shootout Summary)\s*</h3>", body):
+        nxt = re.search(r"<h3[\s>]|<table", body[m.end():])
+        summaries[m.group(1)] = body[m.end():m.end() + (nxt.start() if nxt else 20000)]
+    scoring = [_goal(p, c) for p, c in _summary_rows(summaries.get("Scoring Summary", ""))]
+    penalties = [_penalty(p, c) for p, c in _summary_rows(summaries.get("Penalty Summary", ""))
+                 if clean(c.get("play_details", [""])[0]).upper() != "NO PENALTY"]
+
+    final = re.search(r"FINAL\s*/\s*(OT|SO)", clean(body), re.I)
+    if final:
+        note = final.group(1).upper()
+    elif "Shootout Summary" in summaries:
+        note = "SO"
+    else:
+        note = "OT" if any(p.upper().startswith("OT") for p in periods) else ""
+    if not all(tm.get("skaters") for tm in teams):
+        raise ValueError(f"game {gid}: player stats missing")
+    return {"id": gid, "periods": periods, "note": note, "teams": teams,
+            "scoring": scoring, "penalties": penalties}
+
+
 # ---------------------------------------------------------------- main
 
 def main():
@@ -226,6 +346,15 @@ def main():
     def load(name):
         p = data_dir / name
         return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+    def save(name, data):
+        # Only bump "updated" when something actually changed, so unchanged weeks make no commit.
+        if {k: v for k, v in load(name).items() if k != "updated"} == data:
+            print(f"{name}: no changes")
+            return
+        (data_dir / name).write_text(json.dumps({"updated": now, **data}, ensure_ascii=False, indent=2) + "\n",
+                                     encoding="utf-8")
+        print(f"{name}: updated")
 
     jobs = {
         "schedule.json": lambda: build_schedule(load("schedule.json").get("games", [])),
@@ -240,14 +369,19 @@ def main():
             print(f"error: couldn't update {name}: {err!r}", file=sys.stderr)
             failed.append(name)
             continue
-        path = data_dir / name
-        old = load(name)
-        # Only bump "updated" when something actually changed, so unchanged weeks make no commit.
-        if {k: v for k, v in old.items() if k != "updated"} == data:
-            print(f"{name}: no changes")
+        save(name, data)
+
+    # A box score for every finished game. All are re-read each week to pick up league corrections.
+    (data_dir / "games").mkdir(exist_ok=True)
+    for g in load("schedule.json").get("games", []):
+        if not g.get("score"):
             continue
-        path.write_text(json.dumps({"updated": now, **data}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"{name}: updated")
+        name = f"games/{g['id']}.json"
+        try:
+            save(name, build_game(g["id"]))
+        except Exception as err:
+            print(f"error: couldn't update {name}: {err!r}", file=sys.stderr)
+            failed.append(name)
     if failed:
         sys.exit(f"Failed: {', '.join(failed)} (left as they were)")
 

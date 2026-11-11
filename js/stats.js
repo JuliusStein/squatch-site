@@ -26,21 +26,59 @@
       `Updated ${updated.toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}.`;
   }
 
-  // A column: [header, value(row), {x: hide on phones, title, cls}]
-  const table = (cols, rows) => `
+  // A column: [header, value(row), {x: hide on phones, title, cls, row, sort: raw value(row), asc: sort low-to-high first}]
+  // Sortable tables re-sort when a column header is clicked; the sorted column is highlighted.
+  const tables = [];
+  const cellCls = (o, i, t) => [o.cls, o.x && "col-x", t.sortable && t.key === i && "is-sorted"].filter(Boolean).join(" ");
+  const body = (t) => t.rows.map((r) => `<tr>${t.cols.map(([, v, o = {}], i) =>
+    o.row ? `<th scope="row" class="${cellCls(o, i, t)}">${v(r)}</th>`
+          : `<td class="${cellCls(o, i, t)}">${v(r)}</td>`).join("")}</tr>`).join("");
+  const head = (t) => t.cols.map(([h, , o = {}], i) => {
+    const title = o.title ? ` title="${o.title}"` : "";
+    if (!t.sortable) return `<th scope="col" class="${cellCls(o, i, t)}"${title}>${h}</th>`;
+    const sort = t.key === i ? ` aria-sort="${t.dir > 0 ? "ascending" : "descending"}"` : "";
+    return `<th scope="col" class="${cellCls(o, i, t)}"${title}${sort}><button type="button" class="sort-btn" data-col="${i}">${h}</button></th>`;
+  }).join("");
+  const table = (cols, rows, opts = {}) => {
+    const t = { cols, rows, base: rows, sortable: !!opts.sortBy || opts.sortBy === 0, key: opts.sortBy, dir: -1 };
+    if (t.sortable) t.cols = cols.map(([h, v, o = {}]) => [h, v, { ...o, cls: (o.cls || "").replace("col-pts", "").trim() }]);
+    tables.push(t);
+    return `
     <div class="standings-scroll">
-      <table class="standings-table stats-table">
-        <thead><tr>${cols.map(([h, , o = {}]) =>
-          `<th scope="col" class="${o.cls || ""} ${o.x ? "col-x" : ""}"${o.title ? ` title="${o.title}"` : ""}>${h}</th>`).join("")}</tr></thead>
-        <tbody>${rows.map((r) => `<tr>${cols.map(([, v, o = {}]) =>
-          o.row ? `<th scope="row" class="${o.cls || ""}">${v(r)}</th>`
-                : `<td class="${o.cls || ""} ${o.x ? "col-x" : ""}">${v(r)}</td>`).join("")}</tr>`).join("")}
-        </tbody>
+      <table class="standings-table stats-table${t.sortable ? " is-sortable" : ""}" data-t="${tables.length - 1}">
+        <thead><tr>${head(t)}</tr></thead>
+        <tbody>${body(t)}</tbody>
       </table>
     </div>`;
+  };
 
-  const num = { cls: "col-rank" };
-  const name = { cls: "col-team", row: true };
+  function sortTable(el, col) {
+    const t = tables[el.dataset.t];
+    const [, v, o = {}] = t.cols[col];
+    t.dir = t.key === col ? -t.dir : (o.asc ? 1 : -1);
+    t.key = col;
+    const val = (r) => (o.sort ? o.sort(r) : v(r));
+    const blank = (x) => x === "" || x === null || x === undefined;
+    // Stable sort on the default order, so ties keep it; blanks always go last.
+    t.rows = [...t.base].sort((a, b) => {
+      const x = val(a), y = val(b);
+      if (blank(x) || blank(y)) return blank(x) - blank(y);
+      const nx = Number(x), ny = Number(y);
+      const c = !isNaN(nx) && !isNaN(ny) ? nx - ny : String(x).localeCompare(String(y));
+      return c * t.dir;
+    });
+    el.querySelector("thead tr").innerHTML = head(t);
+    el.querySelector("tbody").innerHTML = body(t);
+    el.querySelector(`.sort-btn[data-col="${col}"]`).focus();
+  }
+
+  out.addEventListener("click", (e) => {
+    const btn = e.target.closest(".sort-btn");
+    if (btn) sortTable(btn.closest("table"), Number(btn.dataset.col));
+  });
+
+  const num = { cls: "col-rank", asc: true };
+  const name = { cls: "col-team", row: true, asc: true };
 
   // ---- Team ----
   const us = data.team.us, them = data.team.opponents;
@@ -70,6 +108,7 @@
   const skaters = [...data.skaters].sort((a, b) => b.pts - a.pts || b.g - a.g || a.name.localeCompare(b.name));
   const skaterHtml = `
     <h2 class="division-title">Skaters</h2>
+    <p class="sort-hint">Tap a column heading to sort.</p>
     ${table([
       ["#", (r) => r.number ?? "", num],
       ["Player", (r) => esc(r.name), name],
@@ -80,7 +119,7 @@
       ["SHG", (r) => r.sh, { x: true, title: "Short-handed goals" }],
       ["GWG", (r) => r.gw, { x: true, title: "Game-winning goals" }],
       ["PIM", (r) => r.pim, { title: "Penalty minutes" }],
-    ], skaters)}`;
+    ], skaters, { sortBy: 5 })}`;
 
   // ---- Goalies who played, most minutes first ----
   const goalies = data.goalies.filter((g) => minutes(g.min) > 0).sort((a, b) => minutes(b.min) - minutes(a.min));
@@ -89,12 +128,12 @@
     ${table([
       ["#", (r) => r.number ?? "", num],
       ["Goalie", (r) => esc(r.name), name],
-      ["GP", (r) => r.gp, { x: true }], ["MIN", (r) => esc(r.min), { x: true }],
+      ["GP", (r) => r.gp, { x: true }], ["MIN", (r) => esc(r.min), { x: true, sort: (r) => minutes(r.min) }],
       ["W", (r) => r.w], ["L", (r) => r.l], ["SOL", (r) => r.sol, { x: true, title: "Shootout losses" }],
       ["GA", (r) => r.ga, { x: true }], ["SV", (r) => r.sv, { x: true }],
-      ["GAA", (r) => Number(r.gaa).toFixed(2), { title: "Goals against average" }],
-      ["SV%", (r) => pct3(r.svPct), { cls: "col-pts", title: "Save percentage" }],
-    ], goalies)}` : "";
+      ["GAA", (r) => Number(r.gaa).toFixed(2), { title: "Goals against average", asc: true }],
+      ["SV%", (r) => pct3(r.svPct), { cls: "col-pts", title: "Save percentage", sort: (r) => r.svPct }],
+    ], goalies, { sortBy: 3 })}` : "";
 
   out.innerHTML = teamHtml + skaterHtml + goalieHtml;
 })();

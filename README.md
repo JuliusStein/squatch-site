@@ -11,6 +11,7 @@ Sasquatch pages on [thecohl.com](https://www.thecohl.com/page/show/9440520-salem
 - `data/schedule.json`: every game, with final scores (and OT/SO) once played
 - `data/standings.json`: East and West division standings
 - `data/stats.json`: skater, goalie and team stats
+- `data/games/<id>.json`: box score for each finished game, shown on `game.html?id=<id>` (click a score on the schedule)
 
 The **Update league data** GitHub Action runs every Monday at 9:00 AM EST
 (10:00 AM during daylight saving time). If anything changed, it commits the new
