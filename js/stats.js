@@ -91,7 +91,7 @@
       ${card("Power play", `${us.special.ppPct}%`, `${n(us.skaters.ppg, "goal")} on ${n(us.special.pp, "chance")}`)}
       ${card("Penalty kill", `${us.special.pkPct}%`, `${us.special.pk - us.special.ppga} of ${us.special.pk} killed`)}
       ${card("Save %", pct3(us.goalies.svPct), `${n(us.goalies.sv, "save")} on ${n(us.goalies.sog, "shot")}`)}
-      ${card("Penalty minutes", us.skaters.pim, `${us.skaters.pen} ${us.skaters.pen === 1 ? "penalty" : "penalties"}`)}
+      ${card("Penalty min / game", us.skaters.gp ? Math.round(us.skaters.pim / us.skaters.gp) : 0, `${n(us.skaters.pim, "minute")} in ${n(us.skaters.gp, "game")}`)}
     </div>
     <h3 class="stats-subtitle">Goals by period</h3>
     ${table([
