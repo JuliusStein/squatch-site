@@ -76,21 +76,10 @@
       </div>
 
       <div class="field">
-        <label for="f-name">Full name</label>
+        <label for="f-name">Name for the ticket list</label>
         <input id="f-name" name="name" type="text" autocomplete="name" required>
+        <p class="field-hint">First and last name.</p>
         <p class="error" data-for="name"></p>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required>
-          <p class="error" data-for="email"></p>
-        </div>
-        <div class="field">
-          <label for="f-phone">Phone</label>
-          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
-          <p class="error" data-for="phone"></p>
-        </div>
       </div>
 
       <div class="field qty-field">
@@ -104,25 +93,10 @@
         <p class="error" data-for="quantity"></p>
       </div>
 
-      <fieldset class="pay-methods">
-        <legend>Pay with</legend>
-        <label class="pay-opt">
-          <input type="radio" name="method" value="stripe" checked>
-          <span>Credit card <small>via Stripe</small></span>
-        </label>
-        <label class="pay-opt">
-          <input type="radio" name="method" value="paypal">
-          <span>PayPal</span>
-        </label>
-        <label class="pay-opt">
-          <input type="radio" name="method" value="venmo">
-          <span>Venmo</span>
-        </label>
-      </fieldset>
-
       <p id="form-status" class="form-status" role="status" hidden></p>
 
-      <button type="submit" class="btn btn-primary btn-block" id="checkout-btn">Continue to checkout</button>
+      <div id="paypal-buttons" class="paypal-buttons"></div>
+      <p class="pay-note">Pay with PayPal or Venmo. PayPal emails your receipt.</p>
     </form>
   </dialog>
 

@@ -25,29 +25,44 @@
 
   async function load() {
     const get = (f) => fetch(`data/${f}`, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-    const [schedule, standings, stats] = await Promise.all([get("schedule.json"), get("standings.json"), get("stats.json")]);
+    const [schedule, standings, stats, tickets] = await Promise.all(
+      [get("schedule.json"), get("standings.json"), get("stats.json"), get("tickets.json")]);
 
-    // Upcoming home games first, then past ones.
+    // Ticket buyers by home game: upcoming games first, then past games that had sales.
+    const sales = tickets?.games || {};
     const now = Date.now();
     const home = (schedule?.games || []).filter((g) => g.home);
     const upcoming = home.filter((g) => new Date(g.start).getTime() + 3 * 3600e3 >= now);
-    const past = home.filter((g) => !upcoming.includes(g)).reverse();
-    const row = (g, isPast) => {
+    const past = home.filter((g) => !upcoming.includes(g) && sales[g.id]?.length).reverse();
+    const last = (name) => name.replace(/^\S+\.\s+/, ""); // "J. Smith" -> "Smith", for sorting
+    const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+    const gameBlock = (g, isPast) => {
       const [y, m, d] = g.date.split("-").map(Number);
       const date = new Date(y, m - 1, d).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
-      return `<tr${isPast ? ' class="is-past-row"' : ""}>
-        <th scope="row" class="col-team">vs ${esc(g.opponent)}${isPast ? ' <small>(played)</small>' : ""}</th>
-        <td>${date}${g.time ? ` · ${esc(g.time)}` : ""}</td>
-        <td class="col-x">${esc(g.location)}</td>
-        <td><code>${esc(g.id)}</code></td>
-      </tr>`;
+      const rows = sales[g.id] || [];
+      const total = rows.reduce((n, r) => n + r.qty, 0);
+      return `
+        <div class="ticket-game${isPast ? " is-past-game" : ""}">
+          <h3 class="ticket-game-head">
+            <span>vs ${esc(g.opponent)} <small>${date}${g.time ? ` · ${esc(g.time)}` : ""}${isPast ? " · played" : ""}</small></span>
+            <span class="ticket-count">${plural(total, "ticket")}</span>
+          </h3>
+          ${rows.length ? `
+          <div class="standings-scroll">
+            <table class="standings-table ticket-table">
+              <thead><tr><th scope="col" class="col-team">Name</th><th scope="col">Tickets</th></tr></thead>
+              <tbody>${[...rows].sort((a, b) => last(a.name).localeCompare(last(b.name)) || a.name.localeCompare(b.name))
+                .map((r) => `<tr><th scope="row" class="col-team">${esc(r.name)}${r.note ? ` <span class="ticket-note">${esc(r.note)}</span>` : ""}</th><td>${r.qty}</td></tr>`).join("")}</tbody>
+            </table>
+          </div>` : '<p class="ticket-none">No online sales yet.</p>'}
+        </div>`;
     };
-    document.getElementById("admin-games").innerHTML =
-      upcoming.map((g) => row(g, false)).join("") + past.map((g) => row(g, true)).join("")
-      || '<tr><td colspan="4">No home games found.</td></tr>';
+    document.getElementById("admin-tickets").innerHTML =
+      (upcoming.map((g) => gameBlock(g, false)).join("") + past.map((g) => gameBlock(g, true)).join(""))
+      || '<p class="empty">No home games on the schedule.</p>';
 
     document.getElementById("admin-updated").innerHTML = [
-      ["Schedule & scores", schedule], ["Standings", standings], ["Stats", stats],
-    ].map(([label, d]) => `<li><b>${label}:</b> ${d?.updated ? `last changed ${when(d.updated)}` : "couldn't load"}</li>`).join("");
+      ["Schedule & scores", schedule], ["Standings", standings], ["Stats", stats], ["Ticket sales", tickets],
+    ].map(([label, d]) => `<li><b>${label}:</b> ${d?.updated ? `last changed ${when(d.updated)}` : label === "Ticket sales" ? "no sales yet" : "couldn't load"}</li>`).join("");
   }
 })();

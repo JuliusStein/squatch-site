@@ -32,3 +32,24 @@ thecohl.com.
 ## Roster
 
 The roster is edited by hand in [`roster.json`](roster.json).
+
+## Tickets
+
+Home-game tickets are $10, paid with PayPal or Venmo through PayPal's buttons
+(`js/payments.js`). Each order carries the game, ticket count and buyer's name.
+
+- **Client ID** (public): `PAYPAL_CLIENT_ID` at the top of `js/payments.js`.
+  While it's empty, the ticket dialog says online sales are coming soon.
+- **Secret key**: only in the repo's GitHub secrets as `PAYPAL_CLIENT_ID` and
+  `PAYPAL_CLIENT_SECRET` (Settings > Secrets and variables > Actions). Never in
+  the site's files. For sandbox credentials, add a repo variable `PAYPAL_ENV` = `sandbox`.
+- The PayPal app needs **Transaction search** turned on in the PayPal developer dashboard.
+
+The **Sync ticket sales** GitHub Action runs every hour. `scripts/sync_tickets.py`
+reads sales from PayPal and writes `data/tickets.json`, which the admin page shows
+by game. PayPal can take up to about 3 hours to report a sale. Refunded orders
+drop off. Orders whose amount isn't $10 a ticket are flagged.
+
+`data/tickets.json` is public like the rest of the site, so it holds only each
+buyer's first initial, last name and ticket count. Emails and payments stay in PayPal.
+To change the price, change `TICKET_PRICE` in both `js/payments.js` and `scripts/sync_tickets.py`.

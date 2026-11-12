@@ -50,25 +50,18 @@
         <div id="admin-tools" hidden>
           <h2 class="division-title">Ticket buyers</h2>
           <p class="admin-note">
-            Online checkout isn't connected yet. Once it is, each order is paid and stored in
-            Stripe or PayPal with the buyer's name, email, phone, ticket count and game. Open
-            the dashboards below to see who bought tickets. Each game's <b>Game ID</b> is attached
-            to its orders, so you can search for it there.
+            Online sales through PayPal and Venmo, by home game. The list checks PayPal every hour,
+            and PayPal can take up to 3 hours to report a new sale, so the newest orders may not
+            show yet. Refunded orders drop off. Emails and payment details are in PayPal.
           </p>
+          <div id="admin-tickets"><p class="empty">Loading ticket sales…</p></div>
           <div class="admin-links">
-            <a class="admin-link" href="https://dashboard.stripe.com/payments" target="_blank" rel="noopener">
-              <b>Stripe payments</b><span>Card orders</span>
-            </a>
             <a class="admin-link" href="https://www.paypal.com/myaccount/activities/" target="_blank" rel="noopener">
-              <b>PayPal activity</b><span>PayPal and Venmo orders</span>
+              <b>PayPal activity</b><span>Payments, refunds and buyer emails</span>
             </a>
-          </div>
-          <h3 class="stats-subtitle">Home games</h3>
-          <div class="standings-scroll">
-            <table class="standings-table admin-games">
-              <thead><tr><th scope="col" class="col-team">Game</th><th scope="col">Date</th><th scope="col" class="col-x">Rink</th><th scope="col">Game ID</th></tr></thead>
-              <tbody id="admin-games"></tbody>
-            </table>
+            <a class="admin-link" href="https://github.com/JuliusStein/squatch-site/actions/workflows/sync-tickets.yml" target="_blank" rel="noopener">
+              <b>Check PayPal now</b><span>Run the ticket sync on GitHub</span>
+            </a>
           </div>
 
           <h2 class="division-title">Roster</h2>

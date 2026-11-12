@@ -2,8 +2,8 @@
 //
 // This only hides the admin page from casual visitors. It is NOT security: the site is
 // static and public, so anyone can read this file or open admin.html directly. That's
-// fine because the admin page holds no data or keys of its own; it only links to GitHub,
-// Stripe and PayPal, which each ask for their own login.
+// fine because the admin page holds no keys of its own and only shows data that is already
+// public on the site (the ticket list has initials and last names only).
 const AdminLogin = (() => {
   // SHA-256 of "username:password", so the login isn't sitting here in plain text.
   const LOGIN_HASH = "7328508f70bb3e58bfaf92fe05e8386313736eade76bf56bddf6105e69e3cb0f";

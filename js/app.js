@@ -129,8 +129,9 @@
   const form = document.getElementById("ticket-form");
   const qtyInput = form.elements.quantity;
   const statusEl = document.getElementById("form-status");
-  const submitBtn = document.getElementById("checkout-btn");
+  const buttonsEl = document.getElementById("paypal-buttons");
   let currentGame = null;
+  let buttonsShown = false;
 
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-buy]");
@@ -147,6 +148,11 @@
     setStatus("");
     updateTotal();
     dialog.showModal();
+    // The PayPal/Venmo buttons are drawn once; they read the form when clicked.
+    if (!buttonsShown) {
+      buttonsShown = true;
+      Payments.render(buttonsEl, { getOrder, onPaid, onProblem: (msg) => setStatus(msg) });
+    }
   }
 
   dialog.querySelector("[data-close]").addEventListener("click", () => dialog.close());
@@ -173,12 +179,40 @@
   function validate() {
     const d = Object.fromEntries(new FormData(form));
     const errs = {};
-    if (!d.name.trim()) errs.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email.trim())) errs.email = "Please enter a valid email.";
-    if (d.phone.replace(/\D/g, "").length < 10) errs.phone = "Please enter a valid phone number.";
+    const name = d.name.trim().replace(/\s+/g, " ");
+    if (!/\S+\s+\S+/.test(name)) errs.name = "Please enter your first and last name.";
     const q = Number(d.quantity);
     if (!Number.isInteger(q) || q < 1 || q > MAX_TICKETS_PER_ORDER) errs.quantity = `Choose between 1 and ${MAX_TICKETS_PER_ORDER} tickets.`;
-    return { d, errs };
+    return { name, quantity: q, errs };
+  }
+
+  // Called when a PayPal or Venmo button is clicked: the order, or null (and errors shown).
+  function getOrder() {
+    clearErrors();
+    setStatus("");
+    const { name, quantity, errs } = validate();
+    const keys = Object.keys(errs);
+    if (keys.length) {
+      for (const k of keys) {
+        form.querySelector(`.error[data-for="${k}"]`).textContent = errs[k];
+        form.elements[k].setAttribute("aria-invalid", "true");
+      }
+      form.elements[keys[0]].focus();
+      return null;
+    }
+    return {
+      gameId: currentGame.id,
+      gameLabel: `Sasquatch vs ${currentGame.opponent}, ${fmt.long(currentGame.start)}`,
+      name,
+      quantity,
+    };
+  }
+
+  function onPaid(details, order) {
+    const q = order.quantity;
+    setStatus(`Payment complete! ${q} ticket${q === 1 ? "" : "s"} for ${order.gameLabel.replace(/^Sasquatch /, "")}, under ${order.name}. PayPal has emailed your receipt.`, true);
+    form.reset();
+    updateTotal();
   }
 
   function clearErrors() {
@@ -191,48 +225,7 @@
     statusEl.classList.toggle("ok", !!ok);
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    clearErrors();
-    setStatus("");
-    const { d, errs } = validate();
-    const keys = Object.keys(errs);
-    if (keys.length) {
-      for (const k of keys) {
-        form.querySelector(`.error[data-for="${k}"]`).textContent = errs[k];
-        form.elements[k].setAttribute("aria-invalid", "true");
-      }
-      form.elements[keys[0]].focus();
-      return;
-    }
-
-    const quantity = Number(d.quantity);
-    const order = {
-      gameId: currentGame.id,
-      game: `vs ${currentGame.opponent} — ${fmt.long(currentGame.start)} · ${currentGame.time}`,
-      name: d.name.trim(),
-      email: d.email.trim(),
-      phone: d.phone.trim(),
-      quantity,
-      unitPrice: TICKET_PRICE,
-      total: quantity * TICKET_PRICE,
-    };
-
-    const provider = Payments[d.method];
-    submitBtn.disabled = true;
-    submitBtn.textContent = `Connecting to ${provider.label}…`;
-    try {
-      const result = await provider.checkout(order);
-      if (result.ok) setStatus("Payment complete! Check your email for your tickets.", true);
-      else setStatus(result.message || "Checkout was not completed.");
-    } catch (err) {
-      console.error(err);
-      setStatus("Something went wrong starting checkout. Please try again.");
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Continue to checkout";
-    }
-  });
+  form.addEventListener("submit", (e) => e.preventDefault());
 
   document.getElementById("year").textContent = new Date().getFullYear();
   renderList();

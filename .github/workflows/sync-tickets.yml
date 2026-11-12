@@ -1,0 +1,63 @@
+# Every hour, read online ticket sales from PayPal into data/tickets.json (shown on
+# the admin page). If anything changed, commit it and redeploy the site.
+# Run it any time from the Actions tab.
+#
+# Needs repo secrets PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET (Settings > Secrets and
+# variables > Actions). Until they're added, each run just says so and stops.
+# For PayPal sandbox (test) credentials, also add a repo variable PAYPAL_ENV = sandbox.
+name: Sync ticket sales
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-tickets
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read sales from PayPal
+        env:
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+          PAYPAL_ENV: ${{ vars.PAYPAL_ENV }}
+        run: python scripts/sync_tickets.py data
+
+      - name: Commit changes
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain -- data/tickets.json)" ]; then
+            echo "No new sales."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/tickets.json
+            git commit -m "Update ticket sales from PayPal"
+            git pull --rebase origin main
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: sync
+    if: ${{ needs.sync.outputs.changed == 'true' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
