@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T19:03:31Z",
+  "updated": "2026-11-16T23:05:36Z",
   "games": [
     {
       "id": "45919855",
@@ -68,7 +68,13 @@
       "time": "6:40 PM",
       "location": "Olympia Ice Center",
       "opponent": "Holyoke Papermen",
-      "home": false
+      "home": false,
+      "score": {
+        "salem": 7,
+        "opponent": 8,
+        "result": "L",
+        "note": "OT"
+      }
     },
     {
       "id": "45919874",

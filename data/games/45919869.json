@@ -1,0 +1,834 @@
+{
+  "updated": "2026-11-16T23:05:36Z",
+  "id": "45919869",
+  "periods": [
+    "1",
+    "2",
+    "3",
+    "OT1"
+  ],
+  "note": "OT",
+  "teams": [
+    {
+      "name": "Salem Sasquatch",
+      "us": true,
+      "goals": [
+        4,
+        2,
+        1,
+        0,
+        7
+      ],
+      "shots": [
+        19,
+        22,
+        6,
+        2,
+        49
+      ],
+      "powerPlay": "2 for 3 (66.67%)",
+      "penaltySummary": "4 minutes on 2 infractions",
+      "skaters": [
+        {
+          "number": 2,
+          "name": "Julius Stein",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 6,
+          "name": "Mark Blaney",
+          "g": 1,
+          "a": 3,
+          "pts": 4,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 7,
+          "name": "Kyle Weeks",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 11,
+          "name": "Robert Murphy",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton",
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 14,
+          "name": "Brady Plante",
+          "g": 3,
+          "a": 1,
+          "pts": 4,
+          "sog": 3,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 27,
+          "name": "Reed Chuda",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley",
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "sog": 1,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 47,
+          "name": "Justin Pitari",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 69,
+          "name": "Jack Doherty",
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 74,
+          "name": "Patrick Wrenn",
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "sog": 1,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 81,
+          "name": "Robert Ghergurovich",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 93,
+          "name": "Brad Perry",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 97,
+          "name": "Scott Isbell",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 30,
+          "name": "Hunter Tetreault",
+          "min": "29:55",
+          "sog": 17,
+          "ga": 4,
+          "sv": 13,
+          "svPct": 0.765
+        },
+        {
+          "number": 31,
+          "name": "Keegan McLaughlin",
+          "min": "32:30",
+          "sog": 25,
+          "ga": 4,
+          "sv": 21,
+          "svPct": 0.84
+        }
+      ]
+    },
+    {
+      "name": "Holyoke Papermen",
+      "us": false,
+      "goals": [
+        2,
+        3,
+        2,
+        1,
+        8
+      ],
+      "shots": [
+        16,
+        13,
+        11,
+        2,
+        42
+      ],
+      "powerPlay": "1 for 2 (50.0%)",
+      "penaltySummary": "8 minutes on 4 infractions",
+      "skaters": [
+        {
+          "number": null,
+          "name": "Braydon LaDuke",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 2,
+          "name": "cody samson",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 4,
+          "name": "Mark Laviolette",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 7,
+          "name": "Kyle Levere",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 9,
+          "name": "Bryce Garber",
+          "g": 3,
+          "a": 0,
+          "pts": 3,
+          "sog": 3,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 12,
+          "name": "Nate Dusza",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 13,
+          "name": "JD Anderson",
+          "g": 3,
+          "a": 1,
+          "pts": 4,
+          "sog": 3,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 15,
+          "name": "Corey Cubito",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 17,
+          "name": "Doug Sattler",
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 18,
+          "name": "Luke Bonavita",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 19,
+          "name": "Danny Loughlin",
+          "g": 0,
+          "a": 3,
+          "pts": 3,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 21,
+          "name": "Bryce Jimenez",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 26,
+          "name": "Robert Kass",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 46,
+          "name": "Connor Bobinski",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 56,
+          "name": "sam desmond",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 77,
+          "name": "Niklas Butchma",
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "sog": 0,
+          "pim": 0,
+          "plusMinus": 0
+        },
+        {
+          "number": 88,
+          "name": "Andy Cassidy",
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "sog": 0,
+          "pim": 2,
+          "plusMinus": 0
+        },
+        {
+          "number": 94,
+          "name": "Patrick Fleming",
+          "g": 2,
+          "a": 2,
+          "pts": 4,
+          "sog": 2,
+          "pim": 0,
+          "plusMinus": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 1,
+          "name": "Tayvon Bozeman",
+          "min": "0:00",
+          "sog": 0,
+          "ga": 0,
+          "sv": 0,
+          "svPct": 0.0
+        },
+        {
+          "number": 30,
+          "name": "Eric Dillner",
+          "min": "0:00",
+          "sog": 0,
+          "ga": 0,
+          "sv": 0,
+          "svPct": 0.0
+        },
+        {
+          "number": 77,
+          "name": "Niklas Butchma",
+          "min": "62:25",
+          "sog": 49,
+          "ga": 7,
+          "sv": 42,
+          "svPct": 0.857
+        }
+      ]
+    }
+  ],
+  "scoring": [
+    {
+      "period": "1st Period",
+      "clock": "3:23",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 13,
+        "name": "JD Anderson"
+      },
+      "assists": [],
+      "strength": "even strength",
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "5:54",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 14,
+        "name": "Brady Plante"
+      },
+      "assists": [
+        {
+          "number": 74,
+          "name": "Patrick Wrenn"
+        },
+        {
+          "number": 11,
+          "name": "Robert Murphy"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        1,
+        1
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "11:22",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 69,
+        "name": "Jack Doherty"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 37,
+          "name": "Luke Plumley"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        2,
+        1
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "12:41",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 94,
+        "name": "Patrick Fleming"
+      },
+      "assists": [
+        {
+          "number": 13,
+          "name": "JD Anderson"
+        },
+        {
+          "number": 56,
+          "name": "sam desmond"
+        }
+      ],
+      "strength": "short handed",
+      "score": [
+        2,
+        2
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "13:25",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 37,
+        "name": "Luke Plumley"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 69,
+          "name": "Jack Doherty"
+        }
+      ],
+      "strength": "power play",
+      "score": [
+        3,
+        2
+      ]
+    },
+    {
+      "period": "1st Period",
+      "clock": "17:45",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 6,
+        "name": "Mark Blaney"
+      },
+      "assists": [
+        {
+          "number": 69,
+          "name": "Jack Doherty"
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton"
+        }
+      ],
+      "strength": "power play",
+      "score": [
+        4,
+        2
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "5:02",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 14,
+        "name": "Brady Plante"
+      },
+      "assists": [
+        {
+          "number": 6,
+          "name": "Mark Blaney"
+        },
+        {
+          "number": 93,
+          "name": "Brad Perry"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        2
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "8:26",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 9,
+        "name": "Bryce Garber"
+      },
+      "assists": [
+        {
+          "number": 46,
+          "name": "Connor Bobinski"
+        },
+        {
+          "number": 19,
+          "name": "Danny Loughlin"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        3
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "11:15",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 13,
+        "name": "JD Anderson"
+      },
+      "assists": [
+        {
+          "number": 17,
+          "name": "Doug Sattler"
+        },
+        {
+          "number": 94,
+          "name": "Patrick Fleming"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        5,
+        4
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "11:41",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 74,
+        "name": "Patrick Wrenn"
+      },
+      "assists": [
+        {
+          "number": 14,
+          "name": "Brady Plante"
+        },
+        {
+          "number": 13,
+          "name": "John Hamilton"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        6,
+        4
+      ]
+    },
+    {
+      "period": "2nd Period",
+      "clock": "18:06",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 9,
+        "name": "Bryce Garber"
+      },
+      "assists": [
+        {
+          "number": 19,
+          "name": "Danny Loughlin"
+        },
+        {
+          "number": 17,
+          "name": "Doug Sattler"
+        }
+      ],
+      "strength": "power play",
+      "score": [
+        6,
+        5
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "5:49",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 94,
+        "name": "Patrick Fleming"
+      },
+      "assists": [],
+      "strength": "short handed",
+      "score": [
+        6,
+        6
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "7:47",
+      "team": "Salem Sasquatch",
+      "scorer": {
+        "number": 14,
+        "name": "Brady Plante"
+      },
+      "assists": [
+        {
+          "number": 74,
+          "name": "Patrick Wrenn"
+        },
+        {
+          "number": 81,
+          "name": "Robert Ghergurovich"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        7,
+        6
+      ]
+    },
+    {
+      "period": "3rd Period",
+      "clock": "17:14",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 13,
+        "name": "JD Anderson"
+      },
+      "assists": [
+        {
+          "number": 94,
+          "name": "Patrick Fleming"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        7,
+        7
+      ]
+    },
+    {
+      "period": "OT1 Period",
+      "clock": "2:25",
+      "team": "Holyoke Papermen",
+      "scorer": {
+        "number": 9,
+        "name": "Bryce Garber"
+      },
+      "assists": [
+        {
+          "number": 19,
+          "name": "Danny Loughlin"
+        },
+        {
+          "number": 77,
+          "name": "Niklas Butchma"
+        }
+      ],
+      "strength": "even strength",
+      "score": [
+        7,
+        8
+      ]
+    }
+  ],
+  "penalties": [
+    {
+      "period": "1st Period",
+      "clock": "12:28",
+      "team": "Holyoke Papermen",
+      "player": {
+        "number": 26,
+        "name": "Robert Kass"
+      },
+      "infraction": "Interference - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "1st Period",
+      "clock": "16:48",
+      "team": "Holyoke Papermen",
+      "player": {
+        "number": 9,
+        "name": "Bryce Garber"
+      },
+      "infraction": "High-Sticking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "12:30",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 37,
+        "name": "Luke Plumley"
+      },
+      "infraction": "Hooking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "13:35",
+      "team": "Holyoke Papermen",
+      "player": {
+        "number": 19,
+        "name": "Danny Loughlin"
+      },
+      "infraction": "High-Sticking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "2nd Period",
+      "clock": "17:51",
+      "team": "Salem Sasquatch",
+      "player": {
+        "number": 47,
+        "name": "Justin Pitari"
+      },
+      "infraction": "Cross-Checking - Minor",
+      "minutes": 2
+    },
+    {
+      "period": "3rd Period",
+      "clock": "5:28",
+      "team": "Holyoke Papermen",
+      "player": {
+        "number": 88,
+        "name": "Andy Cassidy"
+      },
+      "infraction": "Holding - Minor",
+      "minutes": 2
+    }
+  ]
+}
