@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T23:25:15Z",
+  "updated": "2026-11-22T06:58:14Z",
   "games": {
     "45919874": [
       {
@@ -16,6 +16,10 @@
       },
       {
         "name": "K. Ghergurovich",
+        "qty": 1
+      },
+      {
+        "name": "B. Zwicker",
         "qty": 1
       }
     ]
