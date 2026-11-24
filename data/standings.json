@@ -1,50 +1,50 @@
 {
-  "updated": "2026-11-16T23:05:36Z",
+  "updated": "2026-11-24T01:18:38Z",
   "season": "2026–27",
   "divisions": [
     {
       "name": "East",
       "teams": [
         {
-          "name": "Boston Gold Kings",
-          "gp": 7,
-          "w": 4,
-          "l": 3,
-          "t": 0,
-          "otl": 0,
-          "sol": 0,
-          "pts": 8,
-          "gf": 41,
-          "ga": 32,
-          "diff": 9,
-          "divRecord": "2-1-0-0-0"
-        },
-        {
           "name": "Salem Sasquatch",
-          "gp": 5,
-          "w": 3,
+          "gp": 6,
+          "w": 4,
           "l": 0,
           "t": 0,
           "otl": 2,
           "sol": 0,
+          "pts": 10,
+          "gf": 42,
+          "ga": 32,
+          "diff": 10,
+          "divRecord": "3-0-0-1-0"
+        },
+        {
+          "name": "Boston Gold Kings",
+          "gp": 8,
+          "w": 4,
+          "l": 4,
+          "t": 0,
+          "otl": 0,
+          "sol": 0,
           "pts": 8,
-          "gf": 35,
-          "ga": 27,
-          "diff": 8,
-          "divRecord": "2-0-0-1-0"
+          "gf": 46,
+          "ga": 39,
+          "diff": 7,
+          "divRecord": "2-2-0-0-0"
         },
         {
           "name": "Norfolk Mallards",
-          "gp": 4,
+          "gp": 5,
           "w": 1,
-          "l": 3,
+          "l": 4,
           "t": 0,
           "otl": 0,
           "sol": 0,
           "pts": 2,
-          "gf": 9,
-          "ga": 23,
-          "diff": -14,
+          "gf": 12,
+          "ga": 31,
+          "diff": -19,
           "divRecord": "0-2-0-0-0"
         }
       ]
@@ -54,45 +54,45 @@
       "teams": [
         {
           "name": "Connecticut Nutmeggers",
-          "gp": 5,
-          "w": 3,
+          "gp": 6,
+          "w": 4,
           "l": 1,
           "t": 0,
           "otl": 1,
           "sol": 0,
-          "pts": 7,
-          "gf": 30,
-          "ga": 22,
-          "diff": 8,
+          "pts": 9,
+          "gf": 38,
+          "ga": 25,
+          "diff": 13,
           "divRecord": "1-0-0-1-0"
         },
         {
           "name": "Hudson Valley Reapers",
-          "gp": 3,
-          "w": 2,
+          "gp": 4,
+          "w": 3,
           "l": 1,
           "t": 0,
           "otl": 0,
           "sol": 0,
-          "pts": 4,
-          "gf": 19,
-          "ga": 15,
-          "diff": 4,
-          "divRecord": "2-1-0-0-0"
+          "pts": 6,
+          "gf": 33,
+          "ga": 24,
+          "diff": 9,
+          "divRecord": "3-1-0-0-0"
         },
         {
           "name": "Holyoke Papermen",
-          "gp": 4,
+          "gp": 5,
           "w": 1,
-          "l": 3,
+          "l": 4,
           "t": 0,
           "otl": 0,
           "sol": 0,
           "pts": 2,
-          "gf": 15,
-          "ga": 30,
-          "diff": -15,
-          "divRecord": "0-1-0-0-0"
+          "gf": 24,
+          "ga": 44,
+          "diff": -20,
+          "divRecord": "0-2-0-0-0"
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T23:05:36Z",
+  "updated": "2026-11-24T01:18:38Z",
   "games": [
     {
       "id": "45919855",
@@ -83,7 +83,13 @@
       "time": "7:40 PM",
       "location": "Salem Icenter",
       "opponent": "Boston Gold Kings",
-      "home": true
+      "home": true,
+      "score": {
+        "salem": 7,
+        "opponent": 5,
+        "result": "W",
+        "note": ""
+      }
     },
     {
       "id": "45919878",
@@ -168,18 +174,18 @@
     },
     {
       "id": "45985331",
-      "start": "2027-02-20T01:00:00Z",
+      "start": "2027-02-20T00:30:00Z",
       "date": "2027-02-19",
-      "time": "8:00 PM",
+      "time": "7:30 PM",
       "location": "Childrens Health Dallas Stars MultiSport",
       "opponent": "Texas Scorpions",
       "home": false
     },
     {
       "id": "45985333",
-      "start": "2027-02-21T01:00:00Z",
+      "start": "2027-02-21T00:45:00Z",
       "date": "2027-02-20",
-      "time": "8:00 PM",
+      "time": "7:45 PM",
       "location": "Childrens Health Dallas Stars MultiSport",
       "opponent": "Texas Scorpions",
       "home": false
